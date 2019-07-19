@@ -1,3 +1,3 @@
 # mw-utilities
 
-This repository hosts general purpose connectivity middleware utilities such as linked_list, json_parser and other network helper libraries
+Repo to house general purpose middleware utilities. for instance utilities such as linked_list, json_parser etc. shall live here

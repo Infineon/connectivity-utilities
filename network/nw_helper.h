@@ -15,6 +15,10 @@
  * limitations under the License.
  */
 
+/** @file
+ * 
+ * Network helper library
+ */
 #pragma once
 
 #include <stdint.h>

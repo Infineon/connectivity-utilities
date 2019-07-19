@@ -16,7 +16,8 @@
  */
 
 /** @file
- *
+ * 
+ * Linked list helper library
  */
 
 #include "string.h"
