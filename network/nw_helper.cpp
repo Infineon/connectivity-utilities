@@ -96,6 +96,22 @@ bool nw_ip_get_ipv4_address(nw_ip_interface_t nw_interface, nw_ip_address_t *ip_
     return false;
 }
 
+int nw_str_to_ipv4(const char *ip_str, nw_ip_address_t *address)
+{
+    if (ip_str == NULL || address == NULL)
+    {
+        return -1;
+    }
+
+    if (stoip4(ip_str, strlen(ip_str), &address->ip.v4))
+    {
+        address->version = NW_IP_IPV4;
+        return 0;
+    }
+
+    return -1;
+}
+
 void nw_ip_register_status_change_callback(nw_ip_interface_t nw_interface, nw_ip_status_change_callback_t *cb)
 {
     NetworkInterface *iface = reinterpret_cast<NetworkInterface*>(nw_interface);

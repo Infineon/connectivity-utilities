@@ -14,6 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/**
+ * @file
+ * The JSON parser utility library provides helper functions to parse JSON objects
+ */
 #pragma once
 
 #include <stdint.h>
@@ -31,34 +35,12 @@ extern "C" {
 /******************************************************
  *                    Constants
  ******************************************************/
-/*
- * Results returned by JSON library
- */
-#define CY_RSLT_MODULE_JSON_ERR_CODE_START          (0)
+/** Results returned by JSON library */
+#define CY_RSLT_MODULE_JSON_ERR_CODE_START          (0) /** JSON parser result code base */
 #define CY_RSLT_JSON_ERROR_BASE                     CY_RSLT_CREATE(CY_RSLT_TYPE_ERROR, CY_RSLT_MODULE_JSON_BASE, CY_RSLT_MODULE_JSON_ERR_CODE_START)
 
-#define CY_RSLT_JSON_GENERIC_ERROR                  ((cy_rslt_t)(CY_RSLT_JSON_ERROR_BASE + 1))
+#define CY_RSLT_JSON_GENERIC_ERROR                  ((cy_rslt_t)(CY_RSLT_JSON_ERROR_BASE + 1)) /** JSON parser generic error result */
 
-
-/******************************************************
- *                   Enumerations
- ******************************************************/
-
-typedef enum
-{
-    JSON_STRING_TYPE,
-    JSON_NUMBER_TYPE,
-    JSON_VALUE_TYPE,
-    JSON_ARRAY_TYPE,
-    JSON_OBJECT_TYPE,
-    JSON_BOOLEAN_TYPE,
-    JSON_NULL_TYPE,
-    UNKNOWN_JSON_TYPE
-} cy_JSON_type_t;
-
-/******************************************************
- *                 Type Definitions
- ******************************************************/
 #define OBJECT_START_TOKEN        '{'
 #define OBJECT_END_TOKEN          '}'
 
@@ -78,18 +60,59 @@ typedef enum
 #define FALSE_TOKEN               'f'
 
 #define NULL_TOKEN                'n'
+
+/******************************************************
+ *                   Enumerations
+ ******************************************************/
+/******************************************************************************/
+/** \addtogroup group_json_enums *//** \{ */
+/******************************************************************************/
+
+/** JSON data types */
+typedef enum
+{
+    JSON_STRING_TYPE,  /**< JSON string datatype */
+    JSON_NUMBER_TYPE,  /**< JSON number datatype */
+    JSON_VALUE_TYPE,   /**< JSON value datatype */
+    JSON_ARRAY_TYPE,   /**< JSON array datatype */
+    JSON_OBJECT_TYPE,  /**< JSON object */
+    JSON_BOOLEAN_TYPE, /**< JSON boolean datatype */
+    JSON_NULL_TYPE,    /**< JSON null object */
+    UNKNOWN_JSON_TYPE  /**< JSON unknown type */
+} cy_JSON_type_t;
+
+/** \} */
+
+/******************************************************
+ *                 Type Definitions
+ ******************************************************/
+/******************************************************************************/
+/** \addtogroup group_json_structures *//** \{ */
+/******************************************************************************/
+
 /******************************************************
  *                    Structures
  ******************************************************/
+/** JSON parser object */
 typedef struct cy_JSON_object {
 
-    char*               object_string;
-    uint8_t             object_string_length;
-    cy_JSON_type_t      value_type;
-    char*               value;
-    uint16_t            value_length;
-    struct cy_JSON_object* parent_object;
+    char*               object_string;        /**< JSON object as a string */
+    uint8_t             object_string_length; /**< Length of the JSON string */
+    cy_JSON_type_t      value_type;           /**< JSON data type of value parsed */
+    char*               value;                /**< JSON value parsed */
+    uint16_t            value_length;         /**< JSON length of value parsed */
+    struct cy_JSON_object* parent_object;     /**< Pointer to parent JSON object */
 } cy_JSON_object_t;
+
+/** Callback function used for registering with JSON parse
+ *
+ * @param[in] json_object : JSON object which contains the key=value pair parsed by the JSON parser
+ *
+ * @return cy_rslt_t
+ */
+typedef cy_rslt_t (*cy_JSON_callback_t)( cy_JSON_object_t* json_object );
+
+/** \} */
 
 #define JSON_IS_NOT_ESC_CHAR( ch ) ( ( ch != '\b' )  &&  \
                                      ( ch != '\f' ) &&  \
@@ -103,41 +126,48 @@ typedef struct cy_JSON_object {
  *                 Global Variables
  ******************************************************/
 
-/******************************************************
- *               Function Declarations
- ******************************************************/
-typedef cy_rslt_t (*cy_JSON_callback_t)( cy_JSON_object_t* json_object );
+/*****************************************************************************/
+/**
+ *
+ *  @addtogroup group_json_func
+ *
+ * The JSON parser utility library provides helper functions to parse JSON objects
+ * 
+ *
+ *  @{
+ */
+/*****************************************************************************/
 
-/** Register callback to be used by JSON parser
+
+/** Register callback to be invoked by JSON parser while parsing the JSON data
  *
- * @param[in] json_callback                  Callback to be called when JSON parser encounters an objects value. The callback will
- *                                           return the cy_JSON_object_type, giving the object string name,value type the object
- *                                           and the value.
+ * @param[in] json_callback : Pointer to the callback function to be invoked while parsing the JSON data
  *
- * @return @ref cy_rslt_t
+ * @return cy_rslt_t
  */
 cy_rslt_t cy_JSON_parser_register_callback( cy_JSON_callback_t json_callback );
 
-/** Returns the current callback function registered with by JSON parser
+/** Returns the current callback function registered with the JSON parser
  *
  * @return @ref cy_JSON_callback_t
  */
 cy_JSON_callback_t cy_JSON_parser_get_callback( void );
 
-/** Parse JSON input string.
+/** Parse the JSON data.
+ *
  *  This function will parse the JSON input string through a single parse, calling a callback whenever it encounters milestones
- *  an object, passing in object name, json value type, and a value (if value is string or number )
+ *  an object, passing in object name, JSON value type, and a value (if value is string or number )
  *
- * @param[in] json_input   : JSON input array
-
- * @param[in] input_length : Length of JSON input
+ * @param[in] json_input   : Pointer to the JSON data
+ * @param[in] input_length : Length of the JSON data pointed by `json_input1`
  *
- * @return @ref cy_rslt_t
+ * @return cy_rslt_t
  *
  * @note: Currently escape values are not supported.
  */
 cy_rslt_t cy_JSON_parser( const char* json_input, uint32_t input_length );
 
+/** @} */
 
 #ifdef __cplusplus
 } /*extern "C" */
