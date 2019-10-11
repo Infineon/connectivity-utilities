@@ -4,6 +4,10 @@
 Refer to the [README.md](./README.md) for a complete description of the utility libraries
 
 ## Changelog
+### v1.1.1
+* Added TCPIP error code for socket options
+* DHCP client ARP offload fixes to the network helper utilities
+
 ### v1.1.0
 * Added support for string conversion helper, logging functions, worker thread and network helper functions
 * Tested with ARMmbed OS 5.14.0

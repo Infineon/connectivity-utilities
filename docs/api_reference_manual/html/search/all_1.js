@@ -96,6 +96,7 @@ var searchData=
   ['cy_5frslt_5ftcpip_5ferror_5fsocket_5fbind',['CY_RSLT_TCPIP_ERROR_SOCKET_BIND',['../group__tcpip__mw__defines.html#gab3fe3039d2c1d6e20a8f8838b3e1321d',1,'cy_result_mw.h']]],
   ['cy_5frslt_5ftcpip_5ferror_5fsocket_5flisten',['CY_RSLT_TCPIP_ERROR_SOCKET_LISTEN',['../group__tcpip__mw__defines.html#ga78460eabca7186263759b997e7d48e61',1,'cy_result_mw.h']]],
   ['cy_5frslt_5ftcpip_5ferror_5fsocket_5fopen',['CY_RSLT_TCPIP_ERROR_SOCKET_OPEN',['../group__tcpip__mw__defines.html#ga459435add0417e9dedc79891da0ff25e',1,'cy_result_mw.h']]],
+  ['cy_5frslt_5ftcpip_5ferror_5fsocket_5foptions',['CY_RSLT_TCPIP_ERROR_SOCKET_OPTIONS',['../group__tcpip__mw__defines.html#ga181f685c0c7f81d29c2b48003b70a278',1,'cy_result_mw.h']]],
   ['cy_5frslt_5ftcpip_5ferror_5ftls_5foperation',['CY_RSLT_TCPIP_ERROR_TLS_OPERATION',['../group__tcpip__mw__defines.html#ga509559246795922a4c7a516ccbb5f72a',1,'cy_result_mw.h']]],
   ['cy_5frslt_5ftcpip_5ftimeout',['CY_RSLT_TCPIP_TIMEOUT',['../group__tcpip__mw__defines.html#ga38fb6c122779c4f75f0c0ce37ce2e43d',1,'cy_result_mw.h']]],
   ['cy_5frslt_5ftls_5ferr_5fbase',['CY_RSLT_TLS_ERR_BASE',['../group__tls__mw__defines.html#ga0ed14519f02a201dc5e4a22142c72ed9',1,'cy_result_mw.h']]],

@@ -153,6 +153,9 @@ extern "C" {
 #define CY_RSLT_TCPIP_ERROR_SEND              ( CY_RSLT_TCPIP_ERR_BASE + 10)
 /** CY middleware TCP/IP error receiving data */
 #define CY_RSLT_TCPIP_ERROR_RECEIVE           ( CY_RSLT_TCPIP_ERR_BASE + 11)
+/** CY middleware TCP/IP error in setting socket options */
+#define CY_RSLT_TCPIP_ERROR_SOCKET_OPTIONS    ( CY_RSLT_TCPIP_ERR_BASE + 12 )
+
 
 /**
  * @}

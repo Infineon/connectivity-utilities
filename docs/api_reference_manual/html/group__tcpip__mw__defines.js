@@ -12,5 +12,6 @@ var group__tcpip__mw__defines =
     [ "CY_RSLT_TCPIP_ERROR_TLS_OPERATION", "group__tcpip__mw__defines.html#ga509559246795922a4c7a516ccbb5f72a", null ],
     [ "CY_RSLT_TCPIP_ERROR_NO_MORE_SOCKET", "group__tcpip__mw__defines.html#ga391d1a3cd36aa10eaa82a6ac73b9187f", null ],
     [ "CY_RSLT_TCPIP_ERROR_SEND", "group__tcpip__mw__defines.html#ga9c865ee43b7860ff489e1b1f199d043f", null ],
-    [ "CY_RSLT_TCPIP_ERROR_RECEIVE", "group__tcpip__mw__defines.html#ga87793452f910e657035ba95103e4daa3", null ]
+    [ "CY_RSLT_TCPIP_ERROR_RECEIVE", "group__tcpip__mw__defines.html#ga87793452f910e657035ba95103e4daa3", null ],
+    [ "CY_RSLT_TCPIP_ERROR_SOCKET_OPTIONS", "group__tcpip__mw__defines.html#ga181f685c0c7f81d29c2b48003b70a278", null ]
 ];

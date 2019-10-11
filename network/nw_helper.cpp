@@ -16,11 +16,12 @@
  */
 
 /** @file
- * 
+ *
  * Network helper library
  */
 #include "mbed.h"
 
+#include "lwip/dhcp.h"
 #include "lwip/ip4_addr.h"      // NOTE: LwIP specific - ip4_addr
 #include "lwip/netif.h"         // NOTE: LwIP specific - for etharp_cleanup_netif()
 #include "lwip/etharp.h"        // NOTE: LwIP specific - for netif_list for use in etharp_cleanup_netif() call
@@ -40,35 +41,56 @@
  */
 static struct netif *nw_get_our_netif( WhdSTAInterface *iface )
 {
-    const char *our_ip_string;
-    uint32_t our_ipv4addr;
+    char iface_name[4];     /* typically "st0" */
     struct netif *netif;
 
-    our_ip_string = iface->get_ip_address();
-    if (our_ip_string == NULL)
-    {
-        return NULL;
-    }
 
-    stoip4( our_ip_string, strlen(our_ip_string), &our_ipv4addr);
-
-    netif = netif_list;                     // NOTE: This is an LwIP global - refer but do not change
-    while( netif != NULL)
+    if ( iface->get_interface_name(iface_name) != NULL)
     {
-        if ( our_ipv4addr == netif_ip4_addr(netif)->addr )
+        netif = netif_list;                     // NOTE: This is an LwIP global - refer but do not change
+        while( netif != NULL)
         {
-            return netif;
+            char *net_iface_name = netif->name;
+            uint8_t index = netif->num;
+            if ( (iface_name[0] == net_iface_name[0]) &&
+                 (iface_name[1] == net_iface_name[1]) &&
+                 (iface_name[2] == ( index + '0') ) )
+            {
+
+                return netif;
+            }
+            netif = netif->next;
         }
-        netif = netif->next;
     }
     return NULL;
 }
 
+/*
+ * The only event we care about is
+ *   NSAPI_EVENT_CONNECTION_STATUS_CHANGE
+ *
+ * These are the values given to us in the "val" argument:
+ *  NSAPI_STATUS_LOCAL_UP           = 0,        local IP address set
+ *  NSAPI_STATUS_GLOBAL_UP          = 1,        global IP address set
+ *  NSAPI_STATUS_DISCONNECTED       = 2,        no connection to network
+ *  NSAPI_STATUS_CONNECTING         = 3,        connecting to network
+ *      We notice that this is what is set for ARP OL Functional test F5.
+ *      When we see this, call dhcp_network_changed to get the dhcp to reconnect.
+ */
 static void nw_ip_status_change_handler(nw_ip_status_change_callback_t *cb, nsapi_event_t event, intptr_t val)
 {
     if (event == NSAPI_EVENT_CONNECTION_STATUS_CHANGE)
     {
-        (*cb->cb_func)(reinterpret_cast<nw_ip_interface_t>(cb->priv), cb->arg);
+        /* We tell the dhcp server that the ip address is NULL to force DHCP to renew */
+        if (val == NSAPI_STATUS_CONNECTING)
+        {
+            struct netif *netiface = nw_get_our_netif( (WhdSTAInterface *)cb->priv );
+            netif_set_addr( netiface, NULL, NULL, NULL);
+        }
+        if (cb->cb_func != NULL )
+        {
+            (*cb->cb_func)(reinterpret_cast<nw_ip_interface_t>(cb->priv), cb->arg);
+        }
     }
 }
 
@@ -81,16 +103,26 @@ void nw_ip_initialize_status_change_callback(nw_ip_status_change_callback_t *cb,
 
 bool nw_ip_get_ipv4_address(nw_ip_interface_t nw_interface, nw_ip_address_t *ip_addr)
 {
-    NetworkInterface *iface = reinterpret_cast<NetworkInterface*>(nw_interface);
-
-    const char *addr = iface->get_ip_address();
-    if (ip_addr)
+    WhdSTAInterface *iface =  (WhdSTAInterface *)nw_interface;
+    if (iface != NULL)
     {
-        ip_addr->version = NW_IP_INVALID_IP;
-        if (stoip4(addr, strlen(addr), (uint8_t *)&ip_addr->ip.v4))
+        const char *addr;
+        uint32_t ipv4 = 0UL;
+
+        if (iface->is_interface_connected() != WHD_SUCCESS)
         {
-            ip_addr->version = NW_IP_IPV4;
-            return true;
+            return false;
+        }
+
+        addr = iface->get_ip_address();
+        if ( (stoip4(addr, strlen(addr), &ipv4) != 0) && (ipv4 != 0UL) )
+        {
+            if (ip_addr != NULL)
+            {
+                ip_addr->ip.v4 = ipv4;
+                ip_addr->version = NW_IP_IPV4;
+                return true;
+            }
         }
     }
     return false;
