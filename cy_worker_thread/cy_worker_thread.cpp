@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Cypress Semiconductor Corporation
+ * Copyright 2019-2020 Cypress Semiconductor Corporation
  * SPDX-License-Identifier: Apache-2.0
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -48,16 +48,6 @@
 /******************************************************
  *               Variables Definitions
  ******************************************************/
-
-static const cy_thread_priority_t priority_lookup_table[CY_WORKER_THREAD_MAX_PRIORITY_LEVELS] =
-{
-    [CY_WORKER_THREAD_PRIORITY_DEFAULT]        = CY_RTOS_PRIORITY_BELOWNORMAL,
-    [CY_WORKER_THREAD_PRIORITY_LOW]            = CY_RTOS_PRIORITY_LOW,
-    [CY_WORKER_THREAD_PRIORITY_BELOW_NORMAL]   = CY_RTOS_PRIORITY_BELOWNORMAL,
-    [CY_WORKER_THREAD_PRIORITY_NORMAL]         = CY_RTOS_PRIORITY_NORMAL,
-    [CY_WORKER_THREAD_PRIORITY_ABOVE_NORMAL]   = CY_RTOS_PRIORITY_ABOVENORMAL,
-    [CY_WORKER_THREAD_PRIORITY_HIGH]           = CY_RTOS_PRIORITY_HIGH
-};
 
 /******************************************************
  *               Internal Functions
@@ -169,7 +159,7 @@ int cy_create_worker_thread( cy_worker_thread_params_t *params, cy_worker_thread
     new_worker->tag = CY_WORKER_VALID_TAG;
     result = cy_rtos_create_thread(&new_worker->thread, cy_worker_thread_func,
                                    new_worker->name, new_worker->stack, new_worker->stack_size,
-                                   priority_lookup_table[params->priority], (cy_thread_arg_t)new_worker);
+                                   (cy_thread_priority_t)params->priority, (cy_thread_arg_t)new_worker);
     if (result != CY_RSLT_SUCCESS)
     {
         /* Thread create failed */

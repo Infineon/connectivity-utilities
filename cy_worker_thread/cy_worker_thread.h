@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Cypress Semiconductor Corporation
+ * Copyright 2019-2020 Cypress Semiconductor Corporation
  * SPDX-License-Identifier: Apache-2.0
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -124,15 +124,15 @@ typedef void (cy_do_work_func_t)(void *arg);
  *                   Enumerations
  ******************************************************/
 
-/** Worker Thread Priority enums will be converted to the OSes priorities */
+/** Worker Thread Priority enums mapped to the OSes priorities */
 typedef enum
 {
-    CY_WORKER_THREAD_PRIORITY_DEFAULT = 0,     /**< default worker thread priority is CY_WORKER_THREAD_PRIORITY_BELOW_NORMAL */
-    CY_WORKER_THREAD_PRIORITY_LOW,             /**< Lowest worker thread priority  */
-    CY_WORKER_THREAD_PRIORITY_BELOW_NORMAL,    /**< Low worker thread priority     */
-    CY_WORKER_THREAD_PRIORITY_NORMAL,          /**< Normal worker thread priority  */
-    CY_WORKER_THREAD_PRIORITY_ABOVE_NORMAL,    /**< medium worker thread priority  */
-    CY_WORKER_THREAD_PRIORITY_HIGH,            /**< High worker thread priority    */
+    CY_WORKER_THREAD_PRIORITY_DEFAULT      = CY_RTOS_PRIORITY_BELOWNORMAL,  /**< default worker thread priority is CY_WORKER_THREAD_PRIORITY_BELOW_NORMAL */
+    CY_WORKER_THREAD_PRIORITY_LOW          = CY_RTOS_PRIORITY_LOW,          /**< Lowest worker thread priority  */
+    CY_WORKER_THREAD_PRIORITY_BELOW_NORMAL = CY_RTOS_PRIORITY_BELOWNORMAL,  /**< Low worker thread priority     */
+    CY_WORKER_THREAD_PRIORITY_NORMAL       = CY_RTOS_PRIORITY_NORMAL,       /**< Normal worker thread priority  */
+    CY_WORKER_THREAD_PRIORITY_ABOVE_NORMAL = CY_RTOS_PRIORITY_ABOVENORMAL,  /**< medium worker thread priority  */
+    CY_WORKER_THREAD_PRIORITY_HIGH         = CY_RTOS_PRIORITY_HIGH,         /**< High worker thread priority    */
 
     CY_WORKER_THREAD_MAX_PRIORITY_LEVELS
 } cy_worker_thread_priority_t;

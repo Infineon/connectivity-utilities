@@ -91,21 +91,21 @@ $(document).ready(function(){initNavTree('group__group__worker__enums.html','');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:gaa379ade651503422906f97b8ccbc4623"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__worker__enums.html#gaa379ade651503422906f97b8ccbc4623">cy_worker_thread_priority_t</a> { <br />
-&#160;&#160;<a class="el" href="group__group__worker__enums.html#ggaa379ade651503422906f97b8ccbc4623a8b7c97bda41209259e8186a16b1dbe10">CY_WORKER_THREAD_PRIORITY_DEFAULT</a> = 0, 
+&#160;&#160;<a class="el" href="group__group__worker__enums.html#ggaa379ade651503422906f97b8ccbc4623a8b7c97bda41209259e8186a16b1dbe10">CY_WORKER_THREAD_PRIORITY_DEFAULT</a> = CY_RTOS_PRIORITY_BELOWNORMAL, 
 <br />
-&#160;&#160;<a class="el" href="group__group__worker__enums.html#ggaa379ade651503422906f97b8ccbc4623aeb1508f7d6f4265d68f0015aeedacfc3">CY_WORKER_THREAD_PRIORITY_LOW</a>, 
+&#160;&#160;<a class="el" href="group__group__worker__enums.html#ggaa379ade651503422906f97b8ccbc4623aeb1508f7d6f4265d68f0015aeedacfc3">CY_WORKER_THREAD_PRIORITY_LOW</a> = CY_RTOS_PRIORITY_LOW, 
 <br />
-&#160;&#160;<a class="el" href="group__group__worker__enums.html#ggaa379ade651503422906f97b8ccbc4623aca592548ed3418203046ec02198f0b4a">CY_WORKER_THREAD_PRIORITY_BELOW_NORMAL</a>, 
+&#160;&#160;<a class="el" href="group__group__worker__enums.html#ggaa379ade651503422906f97b8ccbc4623aca592548ed3418203046ec02198f0b4a">CY_WORKER_THREAD_PRIORITY_BELOW_NORMAL</a> = CY_RTOS_PRIORITY_BELOWNORMAL, 
 <br />
-&#160;&#160;<a class="el" href="group__group__worker__enums.html#ggaa379ade651503422906f97b8ccbc4623af6ed4e2a192e200ef53d2b1e4048ff1e">CY_WORKER_THREAD_PRIORITY_NORMAL</a>, 
+&#160;&#160;<a class="el" href="group__group__worker__enums.html#ggaa379ade651503422906f97b8ccbc4623af6ed4e2a192e200ef53d2b1e4048ff1e">CY_WORKER_THREAD_PRIORITY_NORMAL</a> = CY_RTOS_PRIORITY_NORMAL, 
 <br />
-&#160;&#160;<a class="el" href="group__group__worker__enums.html#ggaa379ade651503422906f97b8ccbc4623aea18b602f75ae1c7f20ecfadffe79ee8">CY_WORKER_THREAD_PRIORITY_ABOVE_NORMAL</a>, 
+&#160;&#160;<a class="el" href="group__group__worker__enums.html#ggaa379ade651503422906f97b8ccbc4623aea18b602f75ae1c7f20ecfadffe79ee8">CY_WORKER_THREAD_PRIORITY_ABOVE_NORMAL</a> = CY_RTOS_PRIORITY_ABOVENORMAL, 
 <br />
-&#160;&#160;<a class="el" href="group__group__worker__enums.html#ggaa379ade651503422906f97b8ccbc4623a82b0cf680b05a46acd83157009459d70">CY_WORKER_THREAD_PRIORITY_HIGH</a>, 
+&#160;&#160;<a class="el" href="group__group__worker__enums.html#ggaa379ade651503422906f97b8ccbc4623a82b0cf680b05a46acd83157009459d70">CY_WORKER_THREAD_PRIORITY_HIGH</a> = CY_RTOS_PRIORITY_HIGH, 
 <br />
 &#160;&#160;<b>CY_WORKER_THREAD_MAX_PRIORITY_LEVELS</b>
 <br />
- }<tr class="memdesc:gaa379ade651503422906f97b8ccbc4623"><td class="mdescLeft">&#160;</td><td class="mdescRight">Worker Thread Priority enums will be converted to the OSes priorities.  <a href="group__group__worker__enums.html#gaa379ade651503422906f97b8ccbc4623">More...</a><br /></td></tr>
+ }<tr class="memdesc:gaa379ade651503422906f97b8ccbc4623"><td class="mdescLeft">&#160;</td><td class="mdescRight">Worker Thread Priority enums mapped to the OSes priorities.  <a href="group__group__worker__enums.html#gaa379ade651503422906f97b8ccbc4623">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:gaa379ade651503422906f97b8ccbc4623"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -122,7 +122,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Worker Thread Priority enums will be converted to the OSes priorities. </p>
+<p>Worker Thread Priority enums mapped to the OSes priorities. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggaa379ade651503422906f97b8ccbc4623a8b7c97bda41209259e8186a16b1dbe10"></a>CY_WORKER_THREAD_PRIORITY_DEFAULT&#160;</td><td class="fielddoc"><p>default worker thread priority is CY_WORKER_THREAD_PRIORITY_BELOW_NORMAL </p>
 </td></tr>

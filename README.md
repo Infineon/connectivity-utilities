@@ -1,7 +1,6 @@
 ## Introduction
-The connectivity utilities library is a collection of general purpose middleware utilities. Currently, the following utilities are included
-
-Several Cypress connectivity middleware libraries shall depend on this utilities library
+The connectivity utilities library is a collection of general purpose middleware utilities. Several Cypress connectivity middleware libraries shall depend on this utilities library. 
+Currently, the following utilities are included:
 
 ### JSON parser
 The JSON format is often used for serializing and transmitting structured data over a network connection. It is used primarily to transmit data between a server and web application, serving as an alternative to XML. JSON is JavaScript Object Notation. The JSON parser utility library provides helper functions to parse JSON objects and calls the function registered by the caller
@@ -46,9 +45,9 @@ This middleware library and it's features are supported on following Cypress pla
 
 ## Dependencies
 This section provides the list of dependency libraries required for this middleware library to work.
-* [ARM mbed-os stack version 5.13.4 and above](https://os.mbed.com/mbed-os/releases)
+* [ARM mbed-os stack version 5.15.0](https://os.mbed.com/mbed-os/releases)
 
 ## Additional Information
 * [Connectivity Utilities RELEASE.md](./RELEASE.md)
-* [Connectivity Utilities API reference guide](./docs/api_reference_manual.html)
+* [Connectivity Utilities API reference guide](https://cypresssemiconductorco.github.io/connectivity-utilities/api_reference_manual/html/index.html)
 * [Connectivity Utilities version](./version.txt)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Cypress Semiconductor Corporation
+ * Copyright 2019-2020 Cypress Semiconductor Corporation
  * SPDX-License-Identifier: Apache-2.0
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -107,14 +107,24 @@ bool nw_ip_get_ipv4_address(nw_ip_interface_t nw_interface, nw_ip_address_t *ip_
     if (iface != NULL)
     {
         const char *addr;
+        SocketAddress address;
         uint32_t ipv4 = 0UL;
-
+        nsapi_error_t rc = NSAPI_ERROR_OK;
         if (iface->is_interface_connected() != WHD_SUCCESS)
         {
             return false;
         }
 
-        addr = iface->get_ip_address();
+        rc = iface->get_ip_address(&address);
+        if (rc == NSAPI_ERROR_OK)
+        {
+            addr = (const char *) address.get_ip_address();
+        }
+        else
+        {
+            return false;
+        }
+
         if ( (stoip4(addr, strlen(addr), &ipv4) != 0) && (ipv4 != 0UL) )
         {
             if (ip_addr != NULL)
