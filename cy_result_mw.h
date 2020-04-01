@@ -66,29 +66,26 @@ extern "C" {
  * that the error code space can be reserved and allotted efficiently
  */
 
-/** CY middleware results offset */
-#define CY_RSLT_MODULE_MW_OFFSET                         128
-
 /** MDNS module base */
 #define CY_RSLT_MODULE_MDNS_BASE                         CY_RSLT_MODULE_MIDDLEWARE_BASE
 /** AWS IoT module base */
-#define CY_RSLT_MODULE_AWS_BASE                          CY_RSLT_MODULE_MDNS_BASE + CY_RSLT_MODULE_MW_OFFSET
+#define CY_RSLT_MODULE_AWS_BASE                          CY_RSLT_MODULE_MIDDLEWARE_BASE + 1
 /** JSON parser module base */
-#define CY_RSLT_MODULE_JSON_BASE                         CY_RSLT_MODULE_AWS_BASE + CY_RSLT_MODULE_MW_OFFSET
+#define CY_RSLT_MODULE_JSON_BASE                         CY_RSLT_MODULE_MIDDLEWARE_BASE + 2
 /** Linked list module base */
-#define CY_RSLT_MODULE_LINKED_LIST_BASE                  CY_RSLT_MODULE_JSON_BASE + CY_RSLT_MODULE_MW_OFFSET
+#define CY_RSLT_MODULE_LINKED_LIST_BASE                  CY_RSLT_MODULE_MIDDLEWARE_BASE + 3
 /** command console module base */
-#define CY_RSLT_MODULE_COMMAND_CONSOLE_BASE              CY_RSLT_MODULE_LINKED_LIST_BASE + CY_RSLT_MODULE_MW_OFFSET
+#define CY_RSLT_MODULE_COMMAND_CONSOLE_BASE              CY_RSLT_MODULE_MIDDLEWARE_BASE + 4
 /** HTTP server module base */
-#define CY_RSLT_MODULE_HTTP_SERVER                       CY_RSLT_MODULE_COMMAND_CONSOLE_BASE + CY_RSLT_MODULE_MW_OFFSET
+#define CY_RSLT_MODULE_HTTP_SERVER                       CY_RSLT_MODULE_MIDDLEWARE_BASE + 5
 /** WiFi supplicant module base */
-#define CY_RSLT_MODULE_WIFI_SUPPLICANT_BASE              CY_RSLT_MODULE_HTTP_SERVER + CY_RSLT_MODULE_MW_OFFSET
+#define CY_RSLT_MODULE_WIFI_SUPPLICANT_BASE              CY_RSLT_MODULE_MIDDLEWARE_BASE + 6
 /** CY middleware TCP/IP module base */
-#define CY_RSLT_MODULE_TCPIP_BASE                        CY_RSLT_MODULE_WIFI_SUPPLICANT_BASE + CY_RSLT_MODULE_MW_OFFSET
+#define CY_RSLT_MODULE_TCPIP_BASE                        CY_RSLT_MODULE_MIDDLEWARE_BASE + 7
 /** CY generic middleware module base */
-#define CY_RSLT_MODULE_MW_BASE                           CY_RSLT_MODULE_TCPIP_BASE + CY_RSLT_MODULE_MW_OFFSET
+#define CY_RSLT_MODULE_MW_BASE                           CY_RSLT_MODULE_MIDDLEWARE_BASE + 8
 /** CY middleware TLS module base */
-#define CY_RSLT_MODULE_TLS_BASE                          CY_RSLT_MODULE_MW_BASE + CY_RSLT_MODULE_MW_OFFSET
+#define CY_RSLT_MODULE_TLS_BASE                          CY_RSLT_MODULE_MIDDLEWARE_BASE + 9
 
 /**
  * @}

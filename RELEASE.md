@@ -4,6 +4,12 @@
 Refer to the [README.md](./README.md) for a complete description of the utility libraries
 
 ## Changelog
+
+### v2.0.0
+* Removed cy_worker_thread APIs which are now part of abstraction RTOS library
+* Renamed header files and APIs to include 'cy' prefix
+* Added MBED and LWIP component-specific implementation for nw-helper
+
 ### v1.1.2
 * Removed the usage of APIs that are deprecated in Mbed OS version 5.15.0
 

@@ -1,12 +1,5 @@
 var searchData=
 [
-  ['linked_20list_20functions',['Linked list functions',['../group__group__linkedlist__func.html',1,'']]],
-  ['linked_20list_20data_20structures',['Linked list data structures',['../group__group__linkedlist__structures.html',1,'']]],
-  ['logging_20enumerated_20types',['Logging enumerated types',['../group__group__logging__enums.html',1,'']]],
-  ['logging_20functions',['Logging functions',['../group__group__logging__func.html',1,'']]],
-  ['logging_20data_20structures',['Logging data structures',['../group__group__logging__structures.html',1,'']]],
-  ['linked_5flist_5fnode',['linked_list_node',['../structlinked__list__node.html',1,'']]],
-  ['linked_20list_20utilities',['Linked list utilities',['../group__linkedlist__utils.html',1,'']]],
-  ['log_5foutput',['log_output',['../group__group__logging__structures.html#ga0d4aaefe596ccbe75b2f906d8f5938f5',1,'cy_log.h']]],
-  ['logging_20utilities',['Logging utilities',['../group__logging__utils.html',1,'']]]
+  ['middleware_20utilities_20enumerated_20types',['Middleware utilities enumerated types',['../group__group__utils__enums.html',1,'']]],
+  ['mac',['mac',['../structcy__nw__ip__mac__t.html#a82389cd6579c1f00940a532b0370196d',1,'cy_nw_ip_mac_t::mac()'],['../structcy__nw__arp__cache__entry__t.html#a5c90ce96e21728da227e30b9f8c0bb1a',1,'cy_nw_arp_cache_entry_t::mac()']]]
 ];
