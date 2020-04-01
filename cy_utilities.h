@@ -30,6 +30,8 @@
 *
 * * Logging 
 *
+* * Worker thread
+*
 * * JSON parser
 *
 * * Linked list
@@ -55,6 +57,17 @@
 * @ingroup logging_utils
 * \defgroup group_logging_enums Logging enumerated types
 * @ingroup logging_utils
+*
+* \defgroup worker_utils Worker thread utilities
+* @ingroup group_utils
+* \defgroup group_worker_func Worker thread functions
+* @ingroup worker_utils
+* \defgroup group_worker_defines Worker thread defines
+* @ingroup worker_utils
+* \defgroup group_worker_structures Worker thread data structures
+* @ingroup worker_utils
+* \defgroup group_worker_enums worker thread enumerated types
+* @ingroup worker_utils
 *
 * \defgroup json_utils JSON parser utilities
 * @ingroup group_utils
