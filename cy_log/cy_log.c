@@ -28,6 +28,9 @@
 #include "cyabs_rtos.h"
 #include "cy_log.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 /******************************************************
  *                      Macros
  ******************************************************/
@@ -369,3 +372,7 @@ cy_rslt_t cy_log_vprintf(const char *fmt, va_list varg)
 
     return result;
 }
+
+#ifdef __cplusplus
+}
+#endif

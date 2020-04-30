@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['parent_5fobject',['parent_object',['../structcy___j_s_o_n__object__t.html#a9bbdb5554e6f9f4b25dcfc7ca602cd9d',1,'cy_JSON_object_t']]],
-  ['prev',['prev',['../structlinked__list__node.html#ab13714616059112e35b3bbd33b73f161',1,'linked_list_node']]],
-  ['priority',['priority',['../structcy__worker__thread__params__t.html#ae898f77681a667bd1495e149fa9a0f30',1,'cy_worker_thread_params_t']]],
-  ['priv',['priv',['../structnw__ip__status__change__callback__t.html#a921c7588408d802e68302795e11be6c5',1,'nw_ip_status_change_callback_t']]]
+  ['rear',['rear',['../structcy__linked__list__t.html#a15e41006e975af30d593148a9a457004',1,'cy_linked_list_t']]]
 ];

@@ -30,8 +30,6 @@
 *
 * * Logging 
 *
-* * Worker thread
-*
 * * JSON parser
 *
 * * Linked list
@@ -51,47 +49,36 @@
 *
 * \defgroup logging_utils Logging utilities
 * @ingroup group_utils
-* \defgroup group_logging_func Logging functions
+* \defgroup group_logging_enums Logging enumerated types
 * @ingroup logging_utils
 * \defgroup group_logging_structures Logging data structures
 * @ingroup logging_utils
-* \defgroup group_logging_enums Logging enumerated types
+* \defgroup group_logging_func Logging functions
 * @ingroup logging_utils
-*
-* \defgroup worker_utils Worker thread utilities
-* @ingroup group_utils
-* \defgroup group_worker_func Worker thread functions
-* @ingroup worker_utils
-* \defgroup group_worker_defines Worker thread defines
-* @ingroup worker_utils
-* \defgroup group_worker_structures Worker thread data structures
-* @ingroup worker_utils
-* \defgroup group_worker_enums worker thread enumerated types
-* @ingroup worker_utils
 *
 * \defgroup json_utils JSON parser utilities
 * @ingroup group_utils
-* \defgroup group_json_func JSON parser functions
+* \defgroup group_json_enums JSON parser enumerated types
 * @ingroup json_utils
 * \defgroup group_json_structures JSON parser data structures
 * @ingroup json_utils
-* \defgroup group_json_enums JSON parser enumerated types
+* \defgroup group_json_func JSON parser functions
 * @ingroup json_utils
 *
 * \defgroup linkedlist_utils Linked list utilities
 * @ingroup group_utils
-* \defgroup group_linkedlist_func Linked list functions
-* @ingroup linkedlist_utils
 * \defgroup group_linkedlist_structures Linked list data structures
+* @ingroup linkedlist_utils
+* \defgroup group_linkedlist_func Linked list functions
 * @ingroup linkedlist_utils
 *
 * \defgroup nwhelper_utils Network helper utilities
 * @ingroup group_utils
-* \defgroup group_nwhelper_func  Network helper functions
+* \defgroup group_nwhelper_enums Network helper enumerated types
 * @ingroup nwhelper_utils
 * \defgroup group_nwhelper_structures Network helper data structures
 * @ingroup nwhelper_utils
-* \defgroup group_nwhelper_enums Network helper enumerated types
+* \defgroup group_nwhelper_func  Network helper functions
 * @ingroup nwhelper_utils
 *
 * \defgroup string_utils String conversion utilities

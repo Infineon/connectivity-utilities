@@ -44,7 +44,7 @@ extern "C" {
    Refer to the macro section of this document for library specific error codes.
    \endverbatim
  *
- * The data structure cy_rslt_t is part of cy_result.h in MBED OS PSoC6 target platform, located in <mbed-os/targets/TARGET_Cypress/TARGET_PSOC6/psoc6csp/core_lib/include>
+ * The data structure cy_rslt_t is part of cy_result.h located in <core_lib/include>
  *
  * Module base: This base is derived from CY_RSLT_MODULE_MIDDLEWARE_BASE (defined in cy_result.h) and is an offset of the CY_RSLT_MODULE_MIDDLEWARE_BASE
  *              The details of the offset and the middleware base are defined below
@@ -66,29 +66,32 @@ extern "C" {
  * that the error code space can be reserved and allotted efficiently
  */
 
-/** CY middleware results offset */
-#define CY_RSLT_MODULE_MW_OFFSET                         128
-
 /** MDNS module base */
 #define CY_RSLT_MODULE_MDNS_BASE                         CY_RSLT_MODULE_MIDDLEWARE_BASE
 /** AWS IoT module base */
-#define CY_RSLT_MODULE_AWS_BASE                          CY_RSLT_MODULE_MDNS_BASE + CY_RSLT_MODULE_MW_OFFSET
+#define CY_RSLT_MODULE_AWS_BASE                          CY_RSLT_MODULE_MIDDLEWARE_BASE + 1
 /** JSON parser module base */
-#define CY_RSLT_MODULE_JSON_BASE                         CY_RSLT_MODULE_AWS_BASE + CY_RSLT_MODULE_MW_OFFSET
+#define CY_RSLT_MODULE_JSON_BASE                         CY_RSLT_MODULE_MIDDLEWARE_BASE + 2
 /** Linked list module base */
-#define CY_RSLT_MODULE_LINKED_LIST_BASE                  CY_RSLT_MODULE_JSON_BASE + CY_RSLT_MODULE_MW_OFFSET
+#define CY_RSLT_MODULE_LINKED_LIST_BASE                  CY_RSLT_MODULE_MIDDLEWARE_BASE + 3
 /** command console module base */
-#define CY_RSLT_MODULE_COMMAND_CONSOLE_BASE              CY_RSLT_MODULE_LINKED_LIST_BASE + CY_RSLT_MODULE_MW_OFFSET
+#define CY_RSLT_MODULE_COMMAND_CONSOLE_BASE              CY_RSLT_MODULE_MIDDLEWARE_BASE + 4
 /** HTTP server module base */
-#define CY_RSLT_MODULE_HTTP_SERVER                       CY_RSLT_MODULE_COMMAND_CONSOLE_BASE + CY_RSLT_MODULE_MW_OFFSET
+#define CY_RSLT_MODULE_HTTP_SERVER                       CY_RSLT_MODULE_MIDDLEWARE_BASE + 5
 /** WiFi supplicant module base */
-#define CY_RSLT_MODULE_WIFI_SUPPLICANT_BASE              CY_RSLT_MODULE_HTTP_SERVER + CY_RSLT_MODULE_MW_OFFSET
+#define CY_RSLT_MODULE_WIFI_SUPPLICANT_BASE              CY_RSLT_MODULE_MIDDLEWARE_BASE + 6
 /** CY middleware TCP/IP module base */
-#define CY_RSLT_MODULE_TCPIP_BASE                        CY_RSLT_MODULE_WIFI_SUPPLICANT_BASE + CY_RSLT_MODULE_MW_OFFSET
+#define CY_RSLT_MODULE_TCPIP_BASE                        CY_RSLT_MODULE_MIDDLEWARE_BASE + 7
 /** CY generic middleware module base */
-#define CY_RSLT_MODULE_MW_BASE                           CY_RSLT_MODULE_TCPIP_BASE + CY_RSLT_MODULE_MW_OFFSET
+#define CY_RSLT_MODULE_MW_BASE                           CY_RSLT_MODULE_MIDDLEWARE_BASE + 8
 /** CY middleware TLS module base */
-#define CY_RSLT_MODULE_TLS_BASE                          CY_RSLT_MODULE_MW_BASE + CY_RSLT_MODULE_MW_OFFSET
+#define CY_RSLT_MODULE_TLS_BASE                          CY_RSLT_MODULE_MIDDLEWARE_BASE + 9
+/** CY Secure Sockets module base */
+#define CY_RSLT_MODULE_SECURE_SOCKETS_BASE               CY_RSLT_MODULE_MIDDLEWARE_BASE + 10
+/** CY WiFi Connection Manager (WCM) module base */
+#define CY_RSLT_MODULE_WCM_BASE                          CY_RSLT_MODULE_MIDDLEWARE_BASE + 11
+/** CY LwIP WHD port module base */
+#define CY_RSLT_MODULE_LWIP_WHD_PORT_BASE                CY_RSLT_MODULE_MIDDLEWARE_BASE + 12
 
 /**
  * @}
@@ -188,6 +191,8 @@ extern "C" {
 #define CY_RSLT_MODULE_TLS_UNSUPPORTED        ( CY_RSLT_TLS_ERR_BASE + 8 )
 /** CY middleware TLS handshake failure */        
 #define CY_RSLT_MODULE_TLS_HANDSHAKE_FAILURE  ( CY_RSLT_TLS_ERR_BASE + 9 )
+/** CY middleware TLS socket connection closed by peer */
+#define CY_RSLT_MODULE_TLS_CONNECTION_CLOSED  ( CY_RSLT_TLS_ERR_BASE + 10 )
 
 /**
  * @}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nw_5fip_5fstatus_5fchange_5fcallback_5ffunc_5ft',['nw_ip_status_change_callback_func_t',['../group__group__nwhelper__structures.html#gaf64cd5466fa173f77b0c0e79365b9456',1,'nw_helper.h']]]
+  ['platform_5fget_5ftime',['platform_get_time',['../group__group__logging__structures.html#gae2c1f8addf44c6d8c3eae0ba99182f73',1,'cy_log.h']]]
 ];

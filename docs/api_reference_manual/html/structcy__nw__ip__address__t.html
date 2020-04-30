@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Cypress Connectivity Utilities: nw_ip_status_change_callback_t Struct Reference</title>
+<title>Cypress Connectivity Utilities: cy_nw_ip_address_t Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('structnw__ip__status__change__callback__t.html','');});
+$(document).ready(function(){initNavTree('structcy__nw__ip__address__t.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -83,26 +83,31 @@ $(document).ready(function(){initNavTree('structnw__ip__status__change__callback
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">nw_ip_status_change_callback_t Struct Reference<div class="ingroups"><a class="el" href="group__group__utils.html">Common middleware utilities</a> &raquo; <a class="el" href="group__nwhelper__utils.html">Network helper utilities</a> &raquo; <a class="el" href="group__group__nwhelper__structures.html">Network helper data structures</a></div></div>  </div>
+<div class="title">cy_nw_ip_address_t Struct Reference<div class="ingroups"><a class="el" href="group__group__utils.html">Common middleware utilities</a> &raquo; <a class="el" href="group__nwhelper__utils.html">Network helper utilities</a> &raquo; <a class="el" href="group__group__nwhelper__structures.html">Network helper data structures</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
-<div class="textblock"><p>Network IP status change callback info. </p>
+<div class="textblock"><p>IP addr info. </p>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:aae98dd07b36996a83a0e2332a7290fa2"><td class="memItemLeft" align="right" valign="top"><a id="aae98dd07b36996a83a0e2332a7290fa2"></a>
-<a class="el" href="group__group__nwhelper__structures.html#gaf64cd5466fa173f77b0c0e79365b9456">nw_ip_status_change_callback_func_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnw__ip__status__change__callback__t.html#aae98dd07b36996a83a0e2332a7290fa2">cb_func</a></td></tr>
-<tr class="memdesc:aae98dd07b36996a83a0e2332a7290fa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">IP address status change callback function. <br /></td></tr>
-<tr class="separator:aae98dd07b36996a83a0e2332a7290fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea3689a5517ea21930475cb1beaf2627"><td class="memItemLeft" align="right" valign="top"><a id="aea3689a5517ea21930475cb1beaf2627"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnw__ip__status__change__callback__t.html#aea3689a5517ea21930475cb1beaf2627">arg</a></td></tr>
-<tr class="memdesc:aea3689a5517ea21930475cb1beaf2627"><td class="mdescLeft">&#160;</td><td class="mdescRight">User data. <br /></td></tr>
-<tr class="separator:aea3689a5517ea21930475cb1beaf2627"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a921c7588408d802e68302795e11be6c5"><td class="memItemLeft" align="right" valign="top"><a id="a921c7588408d802e68302795e11be6c5"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnw__ip__status__change__callback__t.html#a921c7588408d802e68302795e11be6c5">priv</a></td></tr>
-<tr class="memdesc:a921c7588408d802e68302795e11be6c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">NW interface. <br /></td></tr>
-<tr class="separator:a921c7588408d802e68302795e11be6c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1db3efe7129fbdefb01fb3f8ca52564"><td class="memItemLeft" align="right" valign="top"><a id="ad1db3efe7129fbdefb01fb3f8ca52564"></a>
+<a class="el" href="group__group__nwhelper__enums.html#ga124df4c582e8f964c636d7b5404ef77e">cy_nw_ip_version_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcy__nw__ip__address__t.html#ad1db3efe7129fbdefb01fb3f8ca52564">version</a></td></tr>
+<tr class="memdesc:ad1db3efe7129fbdefb01fb3f8ca52564"><td class="mdescLeft">&#160;</td><td class="mdescRight">IP version. <br /></td></tr>
+<tr class="separator:ad1db3efe7129fbdefb01fb3f8ca52564"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53985b55afaa2d7182910fbdd6aa0283"><td class="memItemLeft" ><a id="a53985b55afaa2d7182910fbdd6aa0283"></a>
+union {</td></tr>
+<tr class="memitem:ad7f7328222e90cadc824e380f92d18c5"><td class="memItemLeft" >
+&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="structcy__nw__ip__address__t.html#aaed145ba06afe0cc979fadda3c26bf81">v4</a></td></tr>
+<tr class="memdesc:ad7f7328222e90cadc824e380f92d18c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">IPv4 address info. <br /></td></tr>
+<tr class="separator:ad7f7328222e90cadc824e380f92d18c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a2288eaec71fb71666eab5f96a46019"><td class="memItemLeft" >
+&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="structcy__nw__ip__address__t.html#acf1c6a0a23404f563c093d8fd92343de">v6</a> [4]</td></tr>
+<tr class="memdesc:a8a2288eaec71fb71666eab5f96a46019"><td class="mdescLeft">&#160;</td><td class="mdescRight">IPv6 address info. <br /></td></tr>
+<tr class="separator:a8a2288eaec71fb71666eab5f96a46019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53985b55afaa2d7182910fbdd6aa0283"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcy__nw__ip__address__t.html#a53985b55afaa2d7182910fbdd6aa0283">ip</a></td></tr>
+<tr class="memdesc:a53985b55afaa2d7182910fbdd6aa0283"><td class="mdescLeft">&#160;</td><td class="mdescRight">Union of IPv4 and IPv6 address info. <br /></td></tr>
+<tr class="separator:a53985b55afaa2d7182910fbdd6aa0283"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

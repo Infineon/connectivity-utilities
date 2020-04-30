@@ -18,7 +18,7 @@
 /** @file
  *
  */
-#include "JSON.h"
+#include "cy_json_parser.h"
 #include <stddef.h>
 #include <string.h>
 

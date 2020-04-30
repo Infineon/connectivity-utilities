@@ -4,6 +4,12 @@
 Refer to the [README.md](./README.md) for a complete description of the utility libraries
 
 ## Changelog
+
+### v2.0.0
+* Removed cy_worker_thread APIs which are now part of abstraction RTOS library
+* Renamed header files and APIs to include 'cy' prefix
+* Added MBED and LWIP component-specific implementation for nw-helper
+
 ### v1.1.2
 * Removed the usage of APIs that are deprecated in Mbed OS version 5.15.0
 
@@ -24,7 +30,7 @@ This version of the bluetooth gateway Middleware was validated for compatibility
 
 | Software and Tools                                      | Version |
 | :---                                                    | :----:  |
-| GCC Compiler                                            | 9.2.1   |
+| GCC Compiler                                            | 7.2.1   |
 | IAR Compiler                                            | 8.32    |
 | ARM Compiler 6                                          | 6.13    |
 | MBED OS                                                 | 5.15.0  |

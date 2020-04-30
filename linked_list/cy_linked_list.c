@@ -21,7 +21,11 @@
  */
 
 #include "string.h"
-#include "linked_list.h"
+#include "cy_linked_list.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /******************************************************
  *                      Macros
@@ -399,3 +403,7 @@ cy_rslt_t cy_linked_list_remove_node_from_rear( cy_linked_list_t* list, cy_linke
 
     return CY_RSLT_SUCCESS;
 }
+
+#ifdef __cplusplus
+}
+#endif

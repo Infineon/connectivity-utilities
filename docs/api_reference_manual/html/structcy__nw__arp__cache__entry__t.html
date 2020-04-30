@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Cypress Connectivity Utilities: Worker thread defines</title>
+<title>Cypress Connectivity Utilities: cy_nw_arp_cache_entry_t Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('group__group__worker__defines.html','');});
+$(document).ready(function(){initNavTree('structcy__nw__arp__cache__entry__t.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -81,31 +81,24 @@ $(document).ready(function(){initNavTree('group__group__worker__defines.html',''
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">Worker thread defines<div class="ingroups"><a class="el" href="group__group__utils.html">Common middleware utilities</a> &raquo; <a class="el" href="group__worker__utils.html">Worker thread utilities</a></div></div>  </div>
+<div class="title">cy_nw_arp_cache_entry_t Struct Reference<div class="ingroups"><a class="el" href="group__group__utils.html">Common middleware utilities</a> &raquo; <a class="el" href="group__nwhelper__utils.html">Network helper utilities</a> &raquo; <a class="el" href="group__group__nwhelper__structures.html">Network helper data structures</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-<a name="details" id="details"></a><h2 class="groupheader">General Description</h2>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ga620ec0b978c83c33d0c1416e9b2df96c"><td class="memItemLeft" align="right" valign="top"><a id="ga620ec0b978c83c33d0c1416e9b2df96c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__worker__defines.html#ga620ec0b978c83c33d0c1416e9b2df96c">CY_WORKER_VALID_TAG</a>&#160;&#160;&#160;(0xAC0110CA)</td></tr>
-<tr class="memdesc:ga620ec0b978c83c33d0c1416e9b2df96c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tag for validating worker thread info. <br /></td></tr>
-<tr class="separator:ga620ec0b978c83c33d0c1416e9b2df96c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5fbf40b81cded7cb08a5cf6bd6016899"><td class="memItemLeft" align="right" valign="top"><a id="ga5fbf40b81cded7cb08a5cf6bd6016899"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__worker__defines.html#ga5fbf40b81cded7cb08a5cf6bd6016899">CY_WORKER_MAX_NAME_LEN</a>&#160;&#160;&#160;(16)</td></tr>
-<tr class="memdesc:ga5fbf40b81cded7cb08a5cf6bd6016899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Max length of user name for worker thread. <br /></td></tr>
-<tr class="separator:ga5fbf40b81cded7cb08a5cf6bd6016899"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae45bcc8cd62f58eb236ef486b4d5558c"><td class="memItemLeft" align="right" valign="top"><a id="gae45bcc8cd62f58eb236ef486b4d5558c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__worker__defines.html#gae45bcc8cd62f58eb236ef486b4d5558c">CY_WORKER_THREAD_DEFAULT_NAME</a>&#160;&#160;&#160;&quot;CY Worker&quot;</td></tr>
-<tr class="memdesc:gae45bcc8cd62f58eb236ef486b4d5558c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default worker thread name. <br /></td></tr>
-<tr class="separator:gae45bcc8cd62f58eb236ef486b4d5558c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga932d169af3bc9e755a3256518dcc3578"><td class="memItemLeft" align="right" valign="top"><a id="ga932d169af3bc9e755a3256518dcc3578"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__worker__defines.html#ga932d169af3bc9e755a3256518dcc3578">CY_WORKER_THREAD_DEFAULT_STACK_SIZE</a>&#160;&#160;&#160;(6 * 1024)</td></tr>
-<tr class="memdesc:ga932d169af3bc9e755a3256518dcc3578"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread Default Stack size ( &gt;4k needed for printf() usage) <br /></td></tr>
-<tr class="separator:ga932d169af3bc9e755a3256518dcc3578"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+<div class="textblock"><p>ARP Cache Entry info. </p>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a1b2c28fc5630ac1106386fe0bb591446"><td class="memItemLeft" align="right" valign="top"><a id="a1b2c28fc5630ac1106386fe0bb591446"></a>
+<a class="el" href="structcy__nw__ip__address__t.html">cy_nw_ip_address_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcy__nw__arp__cache__entry__t.html#a1b2c28fc5630ac1106386fe0bb591446">ip</a></td></tr>
+<tr class="memdesc:a1b2c28fc5630ac1106386fe0bb591446"><td class="mdescLeft">&#160;</td><td class="mdescRight">IP address. <br /></td></tr>
+<tr class="separator:a1b2c28fc5630ac1106386fe0bb591446"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c90ce96e21728da227e30b9f8c0bb1a"><td class="memItemLeft" align="right" valign="top"><a id="a5c90ce96e21728da227e30b9f8c0bb1a"></a>
+<a class="el" href="structcy__nw__ip__mac__t.html">cy_nw_ip_mac_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcy__nw__arp__cache__entry__t.html#a5c90ce96e21728da227e30b9f8c0bb1a">mac</a></td></tr>
+<tr class="memdesc:a5c90ce96e21728da227e30b9f8c0bb1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">MAC address. <br /></td></tr>
+<tr class="separator:a5c90ce96e21728da227e30b9f8c0bb1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

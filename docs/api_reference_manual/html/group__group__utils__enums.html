@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('group__group__utils__enums.html','');}
              14-bits               2-bits            16-bits
 
 Refer to the macro section of this document for library specific error codes.
-</pre><p>The data structure cy_rslt_t is part of cy_result.h in MBED OS PSoC6 target platform, located in &lt;mbed-os/targets/TARGET_Cypress/TARGET_PSOC6/psoc6csp/core_lib/include&gt;</p>
+</pre><p>The data structure cy_rslt_t is part of cy_result.h located in &lt;core_lib/include&gt;</p>
 <p>Module base: This base is derived from CY_RSLT_MODULE_MIDDLEWARE_BASE (defined in cy_result.h) and is an offset of the CY_RSLT_MODULE_MIDDLEWARE_BASE The details of the offset and the middleware base are defined below</p>
 <p>Type: This type is defined in cy_result.h and can be one of CY_RSLT_TYPE_FATAL, CY_RSLT_TYPE_ERROR, CY_RSLT_TYPE_WARNING or CY_RSLT_TYPE_INFO. AWS library error codes are of type CY_RSLT_TYPE_ERROR</p>
 <p>Library specific error code: These error codes are library specific and defined in macro section of the respetcive libraries</p>
@@ -120,50 +120,58 @@ API Reference</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:gaf03dc3b0e6b3bb4f3d1af05de877a925"><td class="memItemLeft" align="right" valign="top"><a id="gaf03dc3b0e6b3bb4f3d1af05de877a925"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#gaf03dc3b0e6b3bb4f3d1af05de877a925">CY_RSLT_MODULE_MW_OFFSET</a>&#160;&#160;&#160;128</td></tr>
-<tr class="memdesc:gaf03dc3b0e6b3bb4f3d1af05de877a925"><td class="mdescLeft">&#160;</td><td class="mdescRight">CY middleware results offset. <br /></td></tr>
-<tr class="separator:gaf03dc3b0e6b3bb4f3d1af05de877a925"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6087b6a02f4b1c851fa7ebb25e92c48e"><td class="memItemLeft" align="right" valign="top"><a id="ga6087b6a02f4b1c851fa7ebb25e92c48e"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#ga6087b6a02f4b1c851fa7ebb25e92c48e">CY_RSLT_MODULE_MDNS_BASE</a>&#160;&#160;&#160;CY_RSLT_MODULE_MIDDLEWARE_BASE</td></tr>
 <tr class="memdesc:ga6087b6a02f4b1c851fa7ebb25e92c48e"><td class="mdescLeft">&#160;</td><td class="mdescRight">MDNS module base. <br /></td></tr>
 <tr class="separator:ga6087b6a02f4b1c851fa7ebb25e92c48e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa82fd59805b7cba33a1a2e036d36a715"><td class="memItemLeft" align="right" valign="top"><a id="gaa82fd59805b7cba33a1a2e036d36a715"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#gaa82fd59805b7cba33a1a2e036d36a715">CY_RSLT_MODULE_AWS_BASE</a>&#160;&#160;&#160;<a class="el" href="group__group__utils__enums.html#ga6087b6a02f4b1c851fa7ebb25e92c48e">CY_RSLT_MODULE_MDNS_BASE</a> + <a class="el" href="group__group__utils__enums.html#gaf03dc3b0e6b3bb4f3d1af05de877a925">CY_RSLT_MODULE_MW_OFFSET</a></td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#gaa82fd59805b7cba33a1a2e036d36a715">CY_RSLT_MODULE_AWS_BASE</a>&#160;&#160;&#160;CY_RSLT_MODULE_MIDDLEWARE_BASE + 1</td></tr>
 <tr class="memdesc:gaa82fd59805b7cba33a1a2e036d36a715"><td class="mdescLeft">&#160;</td><td class="mdescRight">AWS IoT module base. <br /></td></tr>
 <tr class="separator:gaa82fd59805b7cba33a1a2e036d36a715"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga193cffda70e3f7113ac5c8da5e052525"><td class="memItemLeft" align="right" valign="top"><a id="ga193cffda70e3f7113ac5c8da5e052525"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#ga193cffda70e3f7113ac5c8da5e052525">CY_RSLT_MODULE_JSON_BASE</a>&#160;&#160;&#160;<a class="el" href="group__group__utils__enums.html#gaa82fd59805b7cba33a1a2e036d36a715">CY_RSLT_MODULE_AWS_BASE</a> + <a class="el" href="group__group__utils__enums.html#gaf03dc3b0e6b3bb4f3d1af05de877a925">CY_RSLT_MODULE_MW_OFFSET</a></td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#ga193cffda70e3f7113ac5c8da5e052525">CY_RSLT_MODULE_JSON_BASE</a>&#160;&#160;&#160;CY_RSLT_MODULE_MIDDLEWARE_BASE + 2</td></tr>
 <tr class="memdesc:ga193cffda70e3f7113ac5c8da5e052525"><td class="mdescLeft">&#160;</td><td class="mdescRight">JSON parser module base. <br /></td></tr>
 <tr class="separator:ga193cffda70e3f7113ac5c8da5e052525"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga39e7859c212509d8318b01e8ff7552cc"><td class="memItemLeft" align="right" valign="top"><a id="ga39e7859c212509d8318b01e8ff7552cc"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#ga39e7859c212509d8318b01e8ff7552cc">CY_RSLT_MODULE_LINKED_LIST_BASE</a>&#160;&#160;&#160;<a class="el" href="group__group__utils__enums.html#ga193cffda70e3f7113ac5c8da5e052525">CY_RSLT_MODULE_JSON_BASE</a> + <a class="el" href="group__group__utils__enums.html#gaf03dc3b0e6b3bb4f3d1af05de877a925">CY_RSLT_MODULE_MW_OFFSET</a></td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#ga39e7859c212509d8318b01e8ff7552cc">CY_RSLT_MODULE_LINKED_LIST_BASE</a>&#160;&#160;&#160;CY_RSLT_MODULE_MIDDLEWARE_BASE + 3</td></tr>
 <tr class="memdesc:ga39e7859c212509d8318b01e8ff7552cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linked list module base. <br /></td></tr>
 <tr class="separator:ga39e7859c212509d8318b01e8ff7552cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae07ebfa97fe9719958afe96c36508e52"><td class="memItemLeft" align="right" valign="top"><a id="gae07ebfa97fe9719958afe96c36508e52"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#gae07ebfa97fe9719958afe96c36508e52">CY_RSLT_MODULE_COMMAND_CONSOLE_BASE</a>&#160;&#160;&#160;<a class="el" href="group__group__utils__enums.html#ga39e7859c212509d8318b01e8ff7552cc">CY_RSLT_MODULE_LINKED_LIST_BASE</a> + <a class="el" href="group__group__utils__enums.html#gaf03dc3b0e6b3bb4f3d1af05de877a925">CY_RSLT_MODULE_MW_OFFSET</a></td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#gae07ebfa97fe9719958afe96c36508e52">CY_RSLT_MODULE_COMMAND_CONSOLE_BASE</a>&#160;&#160;&#160;CY_RSLT_MODULE_MIDDLEWARE_BASE + 4</td></tr>
 <tr class="memdesc:gae07ebfa97fe9719958afe96c36508e52"><td class="mdescLeft">&#160;</td><td class="mdescRight">command console module base <br /></td></tr>
 <tr class="separator:gae07ebfa97fe9719958afe96c36508e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga65c8e56083ab1e0db8f50f72202766d3"><td class="memItemLeft" align="right" valign="top"><a id="ga65c8e56083ab1e0db8f50f72202766d3"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#ga65c8e56083ab1e0db8f50f72202766d3">CY_RSLT_MODULE_HTTP_SERVER</a>&#160;&#160;&#160;<a class="el" href="group__group__utils__enums.html#gae07ebfa97fe9719958afe96c36508e52">CY_RSLT_MODULE_COMMAND_CONSOLE_BASE</a> + <a class="el" href="group__group__utils__enums.html#gaf03dc3b0e6b3bb4f3d1af05de877a925">CY_RSLT_MODULE_MW_OFFSET</a></td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#ga65c8e56083ab1e0db8f50f72202766d3">CY_RSLT_MODULE_HTTP_SERVER</a>&#160;&#160;&#160;CY_RSLT_MODULE_MIDDLEWARE_BASE + 5</td></tr>
 <tr class="memdesc:ga65c8e56083ab1e0db8f50f72202766d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">HTTP server module base. <br /></td></tr>
 <tr class="separator:ga65c8e56083ab1e0db8f50f72202766d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga09e519a61e3fc353f591897b87ed939b"><td class="memItemLeft" align="right" valign="top"><a id="ga09e519a61e3fc353f591897b87ed939b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#ga09e519a61e3fc353f591897b87ed939b">CY_RSLT_MODULE_WIFI_SUPPLICANT_BASE</a>&#160;&#160;&#160;<a class="el" href="group__group__utils__enums.html#ga65c8e56083ab1e0db8f50f72202766d3">CY_RSLT_MODULE_HTTP_SERVER</a> + <a class="el" href="group__group__utils__enums.html#gaf03dc3b0e6b3bb4f3d1af05de877a925">CY_RSLT_MODULE_MW_OFFSET</a></td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#ga09e519a61e3fc353f591897b87ed939b">CY_RSLT_MODULE_WIFI_SUPPLICANT_BASE</a>&#160;&#160;&#160;CY_RSLT_MODULE_MIDDLEWARE_BASE + 6</td></tr>
 <tr class="memdesc:ga09e519a61e3fc353f591897b87ed939b"><td class="mdescLeft">&#160;</td><td class="mdescRight">WiFi supplicant module base. <br /></td></tr>
 <tr class="separator:ga09e519a61e3fc353f591897b87ed939b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf55c2af2610725e6c563775422f12a16"><td class="memItemLeft" align="right" valign="top"><a id="gaf55c2af2610725e6c563775422f12a16"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#gaf55c2af2610725e6c563775422f12a16">CY_RSLT_MODULE_TCPIP_BASE</a>&#160;&#160;&#160;<a class="el" href="group__group__utils__enums.html#ga09e519a61e3fc353f591897b87ed939b">CY_RSLT_MODULE_WIFI_SUPPLICANT_BASE</a> + <a class="el" href="group__group__utils__enums.html#gaf03dc3b0e6b3bb4f3d1af05de877a925">CY_RSLT_MODULE_MW_OFFSET</a></td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#gaf55c2af2610725e6c563775422f12a16">CY_RSLT_MODULE_TCPIP_BASE</a>&#160;&#160;&#160;CY_RSLT_MODULE_MIDDLEWARE_BASE + 7</td></tr>
 <tr class="memdesc:gaf55c2af2610725e6c563775422f12a16"><td class="mdescLeft">&#160;</td><td class="mdescRight">CY middleware TCP/IP module base. <br /></td></tr>
 <tr class="separator:gaf55c2af2610725e6c563775422f12a16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6a943e98fd2c6177835730df218b2b75"><td class="memItemLeft" align="right" valign="top"><a id="ga6a943e98fd2c6177835730df218b2b75"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#ga6a943e98fd2c6177835730df218b2b75">CY_RSLT_MODULE_MW_BASE</a>&#160;&#160;&#160;<a class="el" href="group__group__utils__enums.html#gaf55c2af2610725e6c563775422f12a16">CY_RSLT_MODULE_TCPIP_BASE</a> + <a class="el" href="group__group__utils__enums.html#gaf03dc3b0e6b3bb4f3d1af05de877a925">CY_RSLT_MODULE_MW_OFFSET</a></td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#ga6a943e98fd2c6177835730df218b2b75">CY_RSLT_MODULE_MW_BASE</a>&#160;&#160;&#160;CY_RSLT_MODULE_MIDDLEWARE_BASE + 8</td></tr>
 <tr class="memdesc:ga6a943e98fd2c6177835730df218b2b75"><td class="mdescLeft">&#160;</td><td class="mdescRight">CY generic middleware module base. <br /></td></tr>
 <tr class="separator:ga6a943e98fd2c6177835730df218b2b75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3e05651118cb5d64279b650b3982298e"><td class="memItemLeft" align="right" valign="top"><a id="ga3e05651118cb5d64279b650b3982298e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#ga3e05651118cb5d64279b650b3982298e">CY_RSLT_MODULE_TLS_BASE</a>&#160;&#160;&#160;<a class="el" href="group__group__utils__enums.html#ga6a943e98fd2c6177835730df218b2b75">CY_RSLT_MODULE_MW_BASE</a> + <a class="el" href="group__group__utils__enums.html#gaf03dc3b0e6b3bb4f3d1af05de877a925">CY_RSLT_MODULE_MW_OFFSET</a></td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#ga3e05651118cb5d64279b650b3982298e">CY_RSLT_MODULE_TLS_BASE</a>&#160;&#160;&#160;CY_RSLT_MODULE_MIDDLEWARE_BASE + 9</td></tr>
 <tr class="memdesc:ga3e05651118cb5d64279b650b3982298e"><td class="mdescLeft">&#160;</td><td class="mdescRight">CY middleware TLS module base. <br /></td></tr>
 <tr class="separator:ga3e05651118cb5d64279b650b3982298e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga70475eb52e1f00ba64f7eaca93a5f992"><td class="memItemLeft" align="right" valign="top"><a id="ga70475eb52e1f00ba64f7eaca93a5f992"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#ga70475eb52e1f00ba64f7eaca93a5f992">CY_RSLT_MODULE_SECURE_SOCKETS_BASE</a>&#160;&#160;&#160;CY_RSLT_MODULE_MIDDLEWARE_BASE + 10</td></tr>
+<tr class="memdesc:ga70475eb52e1f00ba64f7eaca93a5f992"><td class="mdescLeft">&#160;</td><td class="mdescRight">CY Secure Sockets module base. <br /></td></tr>
+<tr class="separator:ga70475eb52e1f00ba64f7eaca93a5f992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga835431c873619fde0721f42d3b737967"><td class="memItemLeft" align="right" valign="top"><a id="ga835431c873619fde0721f42d3b737967"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#ga835431c873619fde0721f42d3b737967">CY_RSLT_MODULE_WCM_BASE</a>&#160;&#160;&#160;CY_RSLT_MODULE_MIDDLEWARE_BASE + 11</td></tr>
+<tr class="memdesc:ga835431c873619fde0721f42d3b737967"><td class="mdescLeft">&#160;</td><td class="mdescRight">CY WiFi Connection Manager (WCM) module base. <br /></td></tr>
+<tr class="separator:ga835431c873619fde0721f42d3b737967"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga25219a019202ea56e81dec4e00a0abb1"><td class="memItemLeft" align="right" valign="top"><a id="ga25219a019202ea56e81dec4e00a0abb1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__utils__enums.html#ga25219a019202ea56e81dec4e00a0abb1">CY_RSLT_MODULE_LWIP_WHD_PORT_BASE</a>&#160;&#160;&#160;CY_RSLT_MODULE_MIDDLEWARE_BASE + 12</td></tr>
+<tr class="memdesc:ga25219a019202ea56e81dec4e00a0abb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">CY LwIP WHD port module base. <br /></td></tr>
+<tr class="separator:ga25219a019202ea56e81dec4e00a0abb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
