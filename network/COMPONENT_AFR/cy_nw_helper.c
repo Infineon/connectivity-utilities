@@ -26,7 +26,7 @@
 #include "lwip/etharp.h"        // NOTE: LwIP specific - for netif_list for use in etharp_cleanup_netif() call
 #include "cy_nw_helper.h"
 #include "cyabs_rtos.h"
-#include "cy_lwip.h"
+#include "iot_wifi_common.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -45,24 +45,22 @@ void cy_nw_ip_initialize_status_change_callback(cy_nw_ip_status_change_callback_
     return;
 }
 
-#if LWIP_IPV4
-
 bool cy_nw_ip_get_ipv4_address(cy_nw_ip_interface_t nw_interface, cy_nw_ip_address_t *ip_addr)
 {
-    struct netif *net = cy_lwip_get_interface() ;
+   struct netif *net = cy_lwip_get_interface() ;
 
-    if (net != NULL && ip_addr != NULL)
-    {
-#if LWIP_IPV6 && LWIP_IPV4
+   if (net != NULL)
+   {
         uint32_t ipv4 = net->ip_addr.u_addr.ip4.addr;
-#else
-        uint32_t ipv4 = net->ip_addr.addr;
-#endif
+
         if (ipv4 != 0UL)
         {
-            ip_addr->ip.v4 = ipv4;
-            ip_addr->version = NW_IP_IPV4;
-            return true;
+            if (ip_addr != NULL)
+            {
+                ip_addr->ip.v4 = ipv4;
+                ip_addr->version = NW_IP_IPV4;
+                return true;
+            }
         }
     }
     return false;
@@ -84,7 +82,6 @@ int cy_nw_str_to_ipv4(const char *ip_str, cy_nw_ip_address_t *address)
     }
     return -1;
 }
-#endif //LWIP_IPV4
 
 void cy_nw_ip_register_status_change_callback(cy_nw_ip_interface_t nw_interface, cy_nw_ip_status_change_callback_t *cb)
 {
@@ -100,7 +97,6 @@ void cy_nw_ip_unregister_status_change_callback(cy_nw_ip_interface_t nw_interfac
     return;
 }
 
-#if LWIP_IPV4 && LWIP_ARP
 int cy_nw_host_arp_cache_clear( cy_nw_ip_interface_t iface )
 {
     struct netif *netif;
@@ -167,7 +163,6 @@ int cy_nw_host_send_arp_request( cy_nw_ip_interface_t ipiface, const char *ip_st
     }
     return 1;
 }
-#endif /* LWIP_IPV4 && LWIP_ARP */
 
 uint32_t cy_nw_get_time (void)
 {

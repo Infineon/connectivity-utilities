@@ -181,12 +181,12 @@ typedef cy_rslt_t (*platform_get_time)(uint32_t* time);
  ******************************************************/
 /** Initialize the logging subsystem.
  *
- * @note If platform_output is NULL, log messages will be discarded.
- *       If platform_time is NULL,  TODO: cy_time_get_time() is used for time stamps.
- *
  * @param[in] level           : The initial logging level to use for all facilities.
- * @param[in] platform_output : Pointer to the platform output routine for log messages.
- * @param[in] platform_time   : Optional pointer to a platform time routine for log message time stamps.
+ * @param[in] platform_output : Pointer to the function invoked by the library to output the log messages.
+ *                              If this argument is passed as NULL, the library prints the log output on the standard output stream (stdio).
+ * @param[in] platform_time   : Pointer to the function invoked by the library to get the time. If this argument is passed as NULL, the library calls
+ *                              [cy_rtos_get_time](https://cypresssemiconductorco.github.io/abstraction-rtos/html/group__group__abstraction__rtos__time.html)
+ *                              function to get the time required for logging.
  *
  * @return cy_rslt_t
  */

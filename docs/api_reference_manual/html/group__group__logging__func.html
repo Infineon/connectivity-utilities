@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Cypress Connectivity Utilities: Logging functions</title>
+<title>Connectivity Middleware Utilities Library: Logging functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><a href="http://www.cypress.com/"><img alt="Logo" src="cypress_logo.png"/></a></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Cypress Connectivity Utilities</div>
+   <div id="projectname">Connectivity Middleware Utilities Library</div>
   </td>
  </tr>
  </tbody>
@@ -156,12 +156,11 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialize the logging subsystem. </p>
-<dl class="section note"><dt>Note</dt><dd>If platform_output is NULL, log messages will be discarded. If platform_time is NULL, TODO: cy_time_get_time() is used for time stamps.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>: The initial logging level to use for all facilities. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">platform_output</td><td>: Pointer to the platform output routine for log messages. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">platform_time</td><td>: Optional pointer to a platform time routine for log message time stamps.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">platform_output</td><td>: Pointer to the function invoked by the library to output the log messages. If this argument is passed as NULL, the library prints the log output on the standard output stream (stdio). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">platform_time</td><td>: Pointer to the function invoked by the library to get the time. If this argument is passed as NULL, the library calls <a href="https://cypresssemiconductorco.github.io/abstraction-rtos/html/group__group__abstraction__rtos__time.html">cy_rtos_get_time</a> function to get the time required for logging.</td></tr>
   </table>
   </dd>
 </dl>
@@ -473,7 +472,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath">
     <ul>
         <li class="footer">
-            Generated for <b>Cypress Connectivity Utilities</b> by <b>Cypress Semiconductor Corporation</b>.
+            Generated for <b>Connectivity Middleware Utilities Library</b> by <b>Cypress Semiconductor Corporation</b>.
             All rights reserved.
         </li>
     </ul>

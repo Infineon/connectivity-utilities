@@ -107,10 +107,11 @@ typedef struct cy_JSON_object {
 /** Callback function used for registering with JSON parse
  *
  * @param[in] json_object : JSON object which contains the key=value pair parsed by the JSON parser
+ * @param[in] arg         : User argument passed in when registering the callback
  *
  * @return cy_rslt_t
  */
-typedef cy_rslt_t (*cy_JSON_callback_t)( cy_JSON_object_t* json_object );
+typedef cy_rslt_t (*cy_JSON_callback_t)( cy_JSON_object_t* json_object, void *arg );
 
 /** \} */
 
@@ -132,7 +133,7 @@ typedef cy_rslt_t (*cy_JSON_callback_t)( cy_JSON_object_t* json_object );
  *  @addtogroup group_json_func
  *
  * The JSON parser utility library provides helper functions to parse JSON objects
- * 
+ *
  *
  *  @{
  */
@@ -142,10 +143,11 @@ typedef cy_rslt_t (*cy_JSON_callback_t)( cy_JSON_object_t* json_object );
 /** Register callback to be invoked by JSON parser while parsing the JSON data
  *
  * @param[in] json_callback : Pointer to the callback function to be invoked while parsing the JSON data
+ * @param[in] arg           : User argument passed in when registering the callback
  *
  * @return cy_rslt_t
  */
-cy_rslt_t cy_JSON_parser_register_callback( cy_JSON_callback_t json_callback );
+cy_rslt_t cy_JSON_parser_register_callback( cy_JSON_callback_t json_callback, void *arg );
 
 /** Returns the current callback function registered with the JSON parser
  *

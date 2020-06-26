@@ -1,9 +1,12 @@
-# Cypress connectivity middleware utilities
+# Connectivity Middleware Utilities
 
 ## What's Included?
 Refer to the [README.md](./README.md) for a complete description of the utility libraries
 
 ## Changelog
+### v2.1.0
+* Introduced user argument support in JSON callback function
+* Introduced default output, and time functions support in cy-log
 
 ### v2.0.0
 * Removed cy_worker_thread APIs which are now part of abstraction RTOS library
@@ -30,8 +33,12 @@ This version of the bluetooth gateway Middleware was validated for compatibility
 
 | Software and Tools                                      | Version |
 | :---                                                    | :----:  |
-| GCC Compiler                                            | 7.2.1   |
+| ModusToolbox Software Environment                       | 2.1     |
+| - ModusToolbox Device Configurator                      | 2.1     |
+| - ModusToolbox CSD Personality in Device Configurator   | 2.0     |
+| - ModusToolbox CapSense Configurator / Tuner tools      | 3.0     |
+| GCC Compiler                                            | 9.2.1   |
 | IAR Compiler                                            | 8.32    |
 | ARM Compiler 6                                          | 6.13    |
-| MBED OS                                                 | 5.15.0  |
+| MBED OS                                                 | 5.15.3  |
 

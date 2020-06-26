@@ -1,5 +1,5 @@
 ## Introduction
-The connectivity utilities library is a collection of general purpose middleware utilities. Several Cypress connectivity middleware libraries shall depend on this utilities library. 
+The connectivity utilities library is a collection of general purpose middleware utilities. Several connectivity middleware libraries shall depend on this utilities library. 
 Currently, the following utilities are included:
 
 ### JSON parser
@@ -28,12 +28,12 @@ This module is a logging subsystem that allows run time control for the logging 
 Refer to the [cy_log.h](./cy_log/cy_log.h) for API documenmtation
 
 ### Middleware Error codes
-The utilities library includes a collection of middleware error codes for various Cypress delivered middleware libraries such as AWS IoT, HTTP server, Enterprise security etc.
+The utilities library includes a collection of middleware error codes for various middleware libraries such as AWS IoT, HTTP server, Enterprise security etc.
 
 Refer to [cy_result_mw.h](./cy_result_mw.h) for details
 
 ## Supported platforms
-This middleware library and its features are supported on following Cypress platforms:
+This middleware library and its features are supported on following PSoC 6 platforms:
 * [PSoC6 WiFi-BT Prototyping Kit (CY8CPROTO-062-4343W)](https://www.cypress.com/documentation/development-kitsboards/psoc-6-wi-fi-bt-prototyping-kit-cy8cproto-062-4343w)
 * [PSoC6 WiFi-BT Pioneer Kit (CY8CKIT-062-WiFi-BT)](https://www.cypress.com/documentation/development-kitsboards/psoc-6-wifi-bt-pioneer-kit-cy8ckit-062-wifi-bt)
 * [PSoC 62S2 Wi-Fi BT Pioneer Kit (CY8CKIT-062S2-43012)](https://www.cypress.com/documentation/development-kitsboards/psoc-62s2-wi-fi-bt-pioneer-kit-cy8ckit-062s2-43012)

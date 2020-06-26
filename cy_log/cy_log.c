@@ -83,6 +83,29 @@ static cy_log_data_t cy_log;
  *               Function Definitions
  ******************************************************/
 
+
+/*
+ * Default implementation to output the log messages. This function is called, if the user doesn't define a output logging function.
+ */
+static int cy_log_output(CY_LOG_FACILITY_T facility, CY_LOG_LEVEL_T level, char *logmsg)
+{
+    (void)facility;
+    (void)level;
+    printf("[F%d] : [L%d] : %s", facility, level, logmsg);
+
+    return 1;
+}
+
+/*
+ * Default implementation to get the time. This function is called, if the user doesn't provide a callback function to get time.
+ */
+static cy_rslt_t cy_log_get_time(uint32_t* time)
+{
+    cy_rtos_get_time(time);
+    return CY_RSLT_SUCCESS;
+}
+
+
 cy_rslt_t cy_log_init(CY_LOG_LEVEL_T level, log_output platform_output, platform_get_time platform_time)
 {
     cy_rslt_t result = CY_RSLT_SUCCESS;
@@ -126,9 +149,23 @@ cy_rslt_t cy_log_init(CY_LOG_LEVEL_T level, log_output platform_output, platform
      * Set the platform output and time routines.
      */
 
-    cy_log.platform_log  = platform_output;
-    cy_log.platform_time = platform_time;
+    if (platform_output != NULL)
+    {
+        cy_log.platform_log  = platform_output;
+    }
+    else
+    {
+        cy_log.platform_log = cy_log_output;
+    }
 
+    if (platform_time != NULL)
+    {
+        cy_log.platform_time = platform_time;
+    }
+    else
+    {
+        cy_log.platform_time = cy_log_get_time;
+    }
     /*
      * All done.
      */
@@ -372,7 +409,6 @@ cy_rslt_t cy_log_vprintf(const char *fmt, va_list varg)
 
     return result;
 }
-
 #ifdef __cplusplus
 }
 #endif

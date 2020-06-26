@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Cypress Connectivity Utilities: JSON parser data structures</title>
+<title>Connectivity Middleware Utilities Library: JSON parser data structures</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><a href="http://www.cypress.com/"><img alt="Logo" src="cypress_logo.png"/></a></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Cypress Connectivity Utilities</div>
+   <div id="projectname">Connectivity Middleware Utilities Library</div>
   </td>
  </tr>
  </tbody>
@@ -97,19 +97,19 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga5d13e70977650f7b83fdb31017d657bd"><td class="memItemLeft" align="right" valign="top">typedef cy_rslt_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__json__structures.html#ga5d13e70977650f7b83fdb31017d657bd">cy_JSON_callback_t</a>) (<a class="el" href="structcy___j_s_o_n__object__t.html">cy_JSON_object_t</a> *json_object)</td></tr>
-<tr class="memdesc:ga5d13e70977650f7b83fdb31017d657bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function used for registering with JSON parse.  <a href="#ga5d13e70977650f7b83fdb31017d657bd">More...</a><br /></td></tr>
-<tr class="separator:ga5d13e70977650f7b83fdb31017d657bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4a3f55927a78d0c526b4d3343c854efa"><td class="memItemLeft" align="right" valign="top">typedef cy_rslt_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__json__structures.html#ga4a3f55927a78d0c526b4d3343c854efa">cy_JSON_callback_t</a>) (<a class="el" href="structcy___j_s_o_n__object__t.html">cy_JSON_object_t</a> *json_object, void *arg)</td></tr>
+<tr class="memdesc:ga4a3f55927a78d0c526b4d3343c854efa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function used for registering with JSON parse.  <a href="#ga4a3f55927a78d0c526b4d3343c854efa">More...</a><br /></td></tr>
+<tr class="separator:ga4a3f55927a78d0c526b4d3343c854efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="ga5d13e70977650f7b83fdb31017d657bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5d13e70977650f7b83fdb31017d657bd">&#9670;&nbsp;</a></span>cy_JSON_callback_t</h2>
+<a id="ga4a3f55927a78d0c526b4d3343c854efa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4a3f55927a78d0c526b4d3343c854efa">&#9670;&nbsp;</a></span>cy_JSON_callback_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef cy_rslt_t(* cy_JSON_callback_t) (<a class="el" href="structcy___j_s_o_n__object__t.html">cy_JSON_object_t</a> *json_object)</td>
+          <td class="memname">typedef cy_rslt_t(* cy_JSON_callback_t) (<a class="el" href="structcy___j_s_o_n__object__t.html">cy_JSON_object_t</a> *json_object, void *arg)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -117,7 +117,8 @@ Typedefs</h2></td></tr>
 <p>Callback function used for registering with JSON parse. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">json_object</td><td>: JSON object which contains the key=value pair parsed by the JSON parser</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">json_object</td><td>: JSON object which contains the key=value pair parsed by the JSON parser </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>: User argument passed in when registering the callback</td></tr>
   </table>
   </dd>
 </dl>
@@ -131,7 +132,7 @@ Typedefs</h2></td></tr>
 <div id="nav-path" class="navpath">
     <ul>
         <li class="footer">
-            Generated for <b>Cypress Connectivity Utilities</b> by <b>Cypress Semiconductor Corporation</b>.
+            Generated for <b>Connectivity Middleware Utilities Library</b> by <b>Cypress Semiconductor Corporation</b>.
             All rights reserved.
         </li>
     </ul>

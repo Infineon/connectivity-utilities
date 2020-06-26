@@ -49,12 +49,13 @@
  *               Static Function Declarations
  ******************************************************/
 
-cy_JSON_callback_t      internal_json_callback;
 static cy_rslt_t validate_array_value( char* start, char* stop, uint8_t len );
 
 /******************************************************
  *               Variable Definitions
  ******************************************************/
+static cy_JSON_callback_t      internal_json_callback;
+static void                    *internal_json_argument;
 
 static char*               previous_token   = NULL;
 static cy_JSON_object_t json_object =
@@ -199,9 +200,10 @@ static cy_rslt_t validate_array_value( char* start, char* stop, uint8_t len )
 
 
 /* Register callbacks parser will use to populate fields*/
-cy_rslt_t cy_JSON_parser_register_callback( cy_JSON_callback_t json_callback )
+cy_rslt_t cy_JSON_parser_register_callback( cy_JSON_callback_t json_callback, void *arg )
 {
     internal_json_callback = json_callback;
+    internal_json_argument = arg;
 
     return CY_RSLT_SUCCESS;
 }
@@ -436,7 +438,7 @@ cy_rslt_t cy_JSON_parser( const char* json_input, uint32_t input_length )
 
                         if ( internal_json_callback != NULL )
                         {
-                            internal_json_callback( &json_object );
+                            internal_json_callback( &json_object, internal_json_argument );
                         }
 
                         /* Reset the value pointers */
@@ -574,7 +576,7 @@ cy_rslt_t cy_JSON_parser( const char* json_input, uint32_t input_length )
 
                     if ( internal_json_callback != NULL )
                     {
-                        internal_json_callback( &json_object );
+                        internal_json_callback( &json_object, internal_json_argument );
                     }
 
                     /* Reset object string start/end tokens */
@@ -720,7 +722,7 @@ cy_rslt_t cy_JSON_parser( const char* json_input, uint32_t input_length )
 
                         if ( internal_json_callback != NULL )
                         {
-                            internal_json_callback( &json_object );
+                            internal_json_callback( &json_object, internal_json_argument );
                         }
 
                         string_start = NULL;
@@ -846,7 +848,7 @@ cy_rslt_t cy_JSON_parser( const char* json_input, uint32_t input_length )
 
                         if ( internal_json_callback != NULL )
                         {
-                            internal_json_callback( &json_object );
+                            internal_json_callback( &json_object, internal_json_argument );
                         }
                         value_start = NULL;
                         value_end = NULL;
@@ -940,7 +942,7 @@ cy_rslt_t cy_JSON_parser( const char* json_input, uint32_t input_length )
 
                         if ( internal_json_callback != NULL )
                         {
-                            internal_json_callback( &json_object );
+                            internal_json_callback( &json_object, internal_json_argument );
                         }
 
                         string_start = NULL;
