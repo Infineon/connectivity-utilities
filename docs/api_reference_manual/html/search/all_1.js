@@ -125,6 +125,5 @@ var searchData=
   ['cylf_5flp',['CYLF_LP',['../group__group__logging__enums.html#gga77dcf80196a559e0918a18c45b326f3aa6dac3469fd1ab51514c3d234331d14fa',1,'cy_log.h']]],
   ['cylf_5fmax',['CYLF_MAX',['../group__group__logging__enums.html#gga77dcf80196a559e0918a18c45b326f3aacfaab6a87a264a6c5984f0131728cdda',1,'cy_log.h']]],
   ['cylf_5fmiddleware',['CYLF_MIDDLEWARE',['../group__group__logging__enums.html#gga77dcf80196a559e0918a18c45b326f3aa216bc23cb3ac611d20e07862c4de9599',1,'cy_log.h']]],
-  ['cylf_5ftest',['CYLF_TEST',['../group__group__logging__enums.html#gga77dcf80196a559e0918a18c45b326f3aaa37298761ce8e5e54c7d4b846749bf23',1,'cy_log.h']]],
-  ['common_20middleware_20utilities',['Common middleware utilities',['../group__group__utils.html',1,'']]]
+  ['cylf_5ftest',['CYLF_TEST',['../group__group__logging__enums.html#gga77dcf80196a559e0918a18c45b326f3aaa37298761ce8e5e54c7d4b846749bf23',1,'cy_log.h']]]
 ];

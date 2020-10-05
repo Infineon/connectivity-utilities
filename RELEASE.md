@@ -4,6 +4,9 @@
 Refer to the [README.md](./README.md) for a complete description of the utility libraries
 
 ## Changelog
+### v2.1.1
+* Updates to support mbed-os 6.2 version
+
 ### v2.1.0
 * Introduced user argument support in JSON callback function
 * Introduced default output, and time functions support in cy-log
@@ -28,8 +31,8 @@ Refer to the [README.md](./README.md) for a complete description of the utility 
 * Initial release for ARMmbed OS
 * Supports JSON_parser and linked list libraries
 
-### Supported Software and Tools
-This version of the bluetooth gateway Middleware was validated for compatibility with the following Software and Tools:
+## Supported Software and Tools
+The current version of the library was validated for compatibility with the following Software and Tools:
 
 | Software and Tools                                      | Version |
 | :---                                                    | :----:  |
@@ -38,7 +41,6 @@ This version of the bluetooth gateway Middleware was validated for compatibility
 | - ModusToolbox CSD Personality in Device Configurator   | 2.0     |
 | - ModusToolbox CapSense Configurator / Tuner tools      | 3.0     |
 | GCC Compiler                                            | 9.2.1   |
-| IAR Compiler                                            | 8.32    |
-| ARM Compiler 6                                          | 6.13    |
-| MBED OS                                                 | 5.15.3  |
+| ARM Compiler 6                                          | 6.14    |
+| MBED OS                                                 | 6.2.0   |
 
