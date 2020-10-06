@@ -34,7 +34,7 @@ extern "C" {
 
 static struct netif *nw_get_our_netif(void)
 {
-    struct netif *net = cy_lwip_get_interface();
+    struct netif *net = cy_lwip_get_interface(CY_LWIP_STA_NW_INTERFACE);
     return net;
 }
 
@@ -49,7 +49,7 @@ void cy_nw_ip_initialize_status_change_callback(cy_nw_ip_status_change_callback_
 
 bool cy_nw_ip_get_ipv4_address(cy_nw_ip_interface_t nw_interface, cy_nw_ip_address_t *ip_addr)
 {
-    struct netif *net = cy_lwip_get_interface() ;
+    struct netif *net = cy_lwip_get_interface(CY_LWIP_STA_NW_INTERFACE) ;
 
     if (net != NULL && ip_addr != NULL)
     {

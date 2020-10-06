@@ -4,6 +4,9 @@
 Refer to the [README.md](./README.md) for a complete description of the utility libraries
 
 ## Changelog
+### v3.0.0
+* Changes to adapt to AnyCloud's support for multiple WiFi interfaces - STA, softAP and concurrent STA+softAP mode
+
 ### v2.1.1
 * Updates to support mbed-os 6.2 version
 
@@ -36,11 +39,11 @@ The current version of the library was validated for compatibility with the foll
 
 | Software and Tools                                      | Version |
 | :---                                                    | :----:  |
-| ModusToolbox Software Environment                       | 2.1     |
-| - ModusToolbox Device Configurator                      | 2.1     |
-| - ModusToolbox CSD Personality in Device Configurator   | 2.0     |
-| - ModusToolbox CapSense Configurator / Tuner tools      | 3.0     |
-| GCC Compiler                                            | 9.2.1   |
-| ARM Compiler 6                                          | 6.14    |
-| MBED OS                                                 | 6.2.0   |
-
+| ModusToolbox Software Environment                       | 2.2     |
+| - ModusToolbox Device Configurator                      | 2.20    |
+| - ModusToolbox CapSense Configurator / Tuner tools      | 3.10    |
+| PSoC 6 Peripheral Driver Library (PDL)                  | 2.0.0   |
+| GCC Compiler                                            | 9.3.1   |
+| IAR Compiler (only for AnyCloud)                        | 8.32    |
+| Arm Compiler 6                                          | 6.14    |
+| Mbed OS                                                 | 6.2.0   |

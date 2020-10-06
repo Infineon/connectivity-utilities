@@ -1,6 +1,7 @@
 var NAVTREE =
 [
   [ "Connectivity Middleware Utilities Library", "index.html", [
+    [ "Overview", "index.html", null ],
     [ "API Reference", "modules.html", "modules" ]
   ] ]
 ];
