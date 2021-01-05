@@ -94,6 +94,8 @@ extern "C" {
 #define CY_RSLT_MODULE_LWIP_WHD_PORT_BASE                CY_RSLT_MODULE_MIDDLEWARE_BASE + 12
 /** Over The Air Update Module base (OTA) */
 #define CY_RSLT_MODULE_OTA_UPDATE_BASE                   CY_RSLT_MODULE_MIDDLEWARE_BASE + 13
+/** HTTP Client module base */
+#define CY_RSLT_MODULE_HTTP_CLIENT                       CY_RSLT_MODULE_MIDDLEWARE_BASE + 14
 
 /**
  * @}

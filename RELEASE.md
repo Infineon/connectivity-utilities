@@ -4,7 +4,10 @@
 Refer to the [README.md](./README.md) for a complete description of the utility libraries
 
 ## Changelog
-### v3.0.0
+### v3.0.1
+* Introduced error code module base for HTTP Client library
+
+#### v3.0.0
 * Changes to adapt to AnyCloud's support for multiple WiFi interfaces - STA, softAP and concurrent STA+softAP mode
 
 ### v2.1.1

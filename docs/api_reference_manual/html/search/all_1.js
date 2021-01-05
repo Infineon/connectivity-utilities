@@ -69,6 +69,7 @@ var searchData=
   ['cy_5fnw_5fstr_5fto_5fipv4',['cy_nw_str_to_ipv4',['../group__group__nwhelper__func.html#gac064ce1afc6b5f07402fdd0bbfb03073',1,'cy_nw_helper.h']]],
   ['cy_5frslt_5fmodule_5faws_5fbase',['CY_RSLT_MODULE_AWS_BASE',['../group__group__utils__enums.html#gaa82fd59805b7cba33a1a2e036d36a715',1,'cy_result_mw.h']]],
   ['cy_5frslt_5fmodule_5fcommand_5fconsole_5fbase',['CY_RSLT_MODULE_COMMAND_CONSOLE_BASE',['../group__group__utils__enums.html#gae07ebfa97fe9719958afe96c36508e52',1,'cy_result_mw.h']]],
+  ['cy_5frslt_5fmodule_5fhttp_5fclient',['CY_RSLT_MODULE_HTTP_CLIENT',['../group__group__utils__enums.html#gac7425aa86414169a2a83feb791cf999d',1,'cy_result_mw.h']]],
   ['cy_5frslt_5fmodule_5fhttp_5fserver',['CY_RSLT_MODULE_HTTP_SERVER',['../group__group__utils__enums.html#ga65c8e56083ab1e0db8f50f72202766d3',1,'cy_result_mw.h']]],
   ['cy_5frslt_5fmodule_5fjson_5fbase',['CY_RSLT_MODULE_JSON_BASE',['../group__group__utils__enums.html#ga193cffda70e3f7113ac5c8da5e052525',1,'cy_result_mw.h']]],
   ['cy_5frslt_5fmodule_5flinked_5flist_5fbase',['CY_RSLT_MODULE_LINKED_LIST_BASE',['../group__group__utils__enums.html#ga39e7859c212509d8318b01e8ff7552cc',1,'cy_result_mw.h']]],
