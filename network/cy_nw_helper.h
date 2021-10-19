@@ -46,6 +46,11 @@
 extern "C" {
 #endif
 
+/** \addtogroup nwhelper_utils 
+ * This is a collection of network helper functions to fetch IPv4 address of the local device, notify IPv4 address 
+ * change via callback and conversion utilities.
+ */
+
 #define cy_assert( error_string, assertion )         do { (void)(assertion); } while(0)
 
 typedef uintptr_t cy_nw_ip_interface_t;
@@ -55,7 +60,9 @@ typedef uintptr_t cy_nw_ip_interface_t;
  *                   Enumerations
  ******************************************************/
 /******************************************************************************/
-/** \addtogroup group_nwhelper_enums *//** \{ */
+/** \addtogroup group_nwhelper_enums 
+ * This provides the documentation of all the enums provided by this utility.
+ *//** \{ */
 /******************************************************************************/
 /** IP version */
 typedef enum nw_ip_version
@@ -75,7 +82,9 @@ typedef enum
 /** \} */
 
 /******************************************************************************/
-/** \addtogroup group_nwhelper_structures *//** \{ */
+/** \addtogroup group_nwhelper_structures 
+ * Lists all the data structures and typedefs provided with the network helper utility along with the documentation.
+ *//** \{ */
 /******************************************************************************/
 /** Network IP status change callback function
  *
@@ -238,6 +247,49 @@ int cy_nw_host_send_arp_request( cy_nw_ip_interface_t iface, const char *ip_stri
  * @return time in milliseconds
  * */
 uint32_t cy_nw_get_time (void);
+
+/** GET IPv4 address in decimal notation.
+ *
+ * NOTE: dotted-decimal notation example (192.168.0.1)
+ *
+ * @param[in]  char_ptr : Pointer to the string containing the IPv4 address in dotted-decimal format.
+ * @param[out] addr     : Pointer to the structure containing IPv4 address in decimal format.
+ *
+ * @return 0 : success
+ *         1 : failed
+ * */
+bool cy_nw_aton (const char *char_ptr , cy_nw_ip_address_t *addr);
+
+/** GET IPv6 address in decimal notation.
+ * NOTE: This API does not support shorthand representation of IPv6 address. Input string should be of the format X:X:X:X:X:X:X:X.
+ *
+ * @param[in]  char_ptr : Pointer to the string containing the IPv6 address.
+ * @param[out] addr     : Pointer to the structure containing IPv6 address in decimal format.
+ *
+ * @return 0 : success
+ *         1 : failed
+ * */
+bool cy_nw_aton_ipv6(const char *char_ptr , cy_nw_ip_address_t *addr);
+
+/** GET IPv4 address in string format.
+ * 
+ * @param[in]  addr     : Pointer to IPv4 address structure containing the IPv4 address.
+ * @param[out] ip_str   : Pointer to the string containing IPv4 address in dotted-decimal notation.
+ *                        ip_str must be 16 bytes long.
+ * @return 0 : success
+ *         1 : failed
+ * */
+bool cy_nw_ntoa (cy_nw_ip_address_t *addr, char *ip_str);
+
+/** GET IPv6 address in string format.
+ *
+ * @param[in]  addr     : Pointer to IPv6 address structure containing the IPv6 address.
+ * @param[out] ip_str   : Pointer to the string containing IPv6 address.
+ *                        ip_str must 39 bytes long.
+ * @return 0 : success
+ *         1 : failed
+ * */
+bool cy_nw_ntoa_ipv6 (cy_nw_ip_address_t *addr, char *ip_str);
 
 /** @} */
 

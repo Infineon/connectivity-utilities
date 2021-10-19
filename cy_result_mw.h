@@ -121,6 +121,7 @@ extern "C" {
  * @defgroup generic_mw_defines generic middleware results/error codes
  * @ingroup group_utils_enums
  * @{
+ * List of all the generic result/error codes defined by the connectivity-utilities library.
  */
 /** Generic middleware error code start */
 #define CY_RSLT_MODULE_MW_ERR_CODE_START       (0)
@@ -149,6 +150,7 @@ extern "C" {
  * @defgroup tcpip_mw_defines TCP/IP socket results/error codes
  * @ingroup group_utils_enums
  * @{
+ * List of all the socket result/error codes defined by the connectivity-utilities library.
  */
 /** TCP/IP error code start */
 #define CY_RSLT_MODULE_TCPIP_ERR_CODE_START       (0)
@@ -191,6 +193,7 @@ extern "C" {
  * @defgroup tls_mw_defines TLS results/error codes
  * @ingroup group_utils_enums
  * @{
+ * List of all the TLS result/error codes defined by the connectivity-utilities library.
  */
 /** TLS error code start */
 #define CY_RSLT_MODULE_TLS_ERR_CODE_START        (0)
@@ -218,6 +221,8 @@ extern "C" {
 #define CY_RSLT_MODULE_TLS_CONNECTION_CLOSED     ( CY_RSLT_TLS_ERR_BASE + 10 )
 /** TLS socket not connected */
 #define CY_RSLT_MODULE_TLS_SOCKET_NOT_CONNECTED  ( CY_RSLT_TLS_ERR_BASE + 11 )
+/** PKCS11 generic error */
+#define CY_RSLT_MODULE_TLS_PKCS_ERROR            ( CY_RSLT_TLS_ERR_BASE + 12 )
 
 /**
  * @}

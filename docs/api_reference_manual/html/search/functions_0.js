@@ -28,6 +28,8 @@ var searchData=
   ['cy_5flog_5fset_5fplatform_5ftime',['cy_log_set_platform_time',['../group__group__logging__func.html#ga28fef2ede13ef8109e6b27805ac8f749',1,'cy_log.h']]],
   ['cy_5flog_5fshutdown',['cy_log_shutdown',['../group__group__logging__func.html#ga9df08670a49c78224aa1826fd0be54fb',1,'cy_log.h']]],
   ['cy_5flog_5fvprintf',['cy_log_vprintf',['../group__group__logging__func.html#gab9d1cb336ea7bb6b51b37d7d06b5f891',1,'cy_log.h']]],
+  ['cy_5fnw_5faton',['cy_nw_aton',['../group__group__nwhelper__func.html#ga4a490647cb8388c5c00eff6e90e31f67',1,'cy_nw_helper.h']]],
+  ['cy_5fnw_5faton_5fipv6',['cy_nw_aton_ipv6',['../group__group__nwhelper__func.html#ga6e1d17b795035ddae44eef8934cd5596',1,'cy_nw_helper.h']]],
   ['cy_5fnw_5fget_5ftime',['cy_nw_get_time',['../group__group__nwhelper__func.html#ga8cec7b3315382e02208ba77a14733d8c',1,'cy_nw_helper.h']]],
   ['cy_5fnw_5fhost_5farp_5fcache_5fclear',['cy_nw_host_arp_cache_clear',['../group__group__nwhelper__func.html#ga6e28295152dd34e6d4474d51b73f2ef6',1,'cy_nw_helper.h']]],
   ['cy_5fnw_5fhost_5farp_5fcache_5fget_5flist',['cy_nw_host_arp_cache_get_list',['../group__group__nwhelper__func.html#ga0366c24466017d402f414fda93c992b4',1,'cy_nw_helper.h']]],
@@ -36,6 +38,8 @@ var searchData=
   ['cy_5fnw_5fip_5finitialize_5fstatus_5fchange_5fcallback',['cy_nw_ip_initialize_status_change_callback',['../group__group__nwhelper__func.html#gad2beee045469986e9af0f3e98cc2593a',1,'cy_nw_helper.h']]],
   ['cy_5fnw_5fip_5fregister_5fstatus_5fchange_5fcallback',['cy_nw_ip_register_status_change_callback',['../group__group__nwhelper__func.html#ga8f71bcd9fe077fb6eaad2e6c2794bd7e',1,'cy_nw_helper.h']]],
   ['cy_5fnw_5fip_5funregister_5fstatus_5fchange_5fcallback',['cy_nw_ip_unregister_status_change_callback',['../group__group__nwhelper__func.html#ga7219dc7312b40ea0d047f4a44dad32a4',1,'cy_nw_helper.h']]],
+  ['cy_5fnw_5fntoa',['cy_nw_ntoa',['../group__group__nwhelper__func.html#ga6c674d16fdb3bd66e42907e164f9060b',1,'cy_nw_helper.h']]],
+  ['cy_5fnw_5fntoa_5fipv6',['cy_nw_ntoa_ipv6',['../group__group__nwhelper__func.html#ga8e1203cce5908ff0dc2fe585097925fc',1,'cy_nw_helper.h']]],
   ['cy_5fnw_5fstr_5fto_5fipv4',['cy_nw_str_to_ipv4',['../group__group__nwhelper__func.html#gac064ce1afc6b5f07402fdd0bbfb03073',1,'cy_nw_helper.h']]],
   ['cy_5fstring_5fto_5fsigned',['cy_string_to_signed',['../group__group__string__func.html#ga430e6dd6a7c7742d6519d590df60ddfb',1,'cy_string_utils.h']]],
   ['cy_5fstring_5fto_5funsigned',['cy_string_to_unsigned',['../group__group__string__func.html#gaef4a65ee7f6454d38bdb5342ed24089e',1,'cy_string_utils.h']]]

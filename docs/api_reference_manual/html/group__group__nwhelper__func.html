@@ -118,6 +118,18 @@ Functions</h2></td></tr>
 <tr class="memitem:ga8cec7b3315382e02208ba77a14733d8c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__nwhelper__func.html#ga8cec7b3315382e02208ba77a14733d8c">cy_nw_get_time</a> (void)</td></tr>
 <tr class="memdesc:ga8cec7b3315382e02208ba77a14733d8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">GET time in milliseconds.  <a href="#ga8cec7b3315382e02208ba77a14733d8c">More...</a><br /></td></tr>
 <tr class="separator:ga8cec7b3315382e02208ba77a14733d8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4a490647cb8388c5c00eff6e90e31f67"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__nwhelper__func.html#ga4a490647cb8388c5c00eff6e90e31f67">cy_nw_aton</a> (const char *char_ptr, <a class="el" href="structcy__nw__ip__address__t.html">cy_nw_ip_address_t</a> *addr)</td></tr>
+<tr class="memdesc:ga4a490647cb8388c5c00eff6e90e31f67"><td class="mdescLeft">&#160;</td><td class="mdescRight">GET IPv4 address in decimal notation.  <a href="#ga4a490647cb8388c5c00eff6e90e31f67">More...</a><br /></td></tr>
+<tr class="separator:ga4a490647cb8388c5c00eff6e90e31f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6e1d17b795035ddae44eef8934cd5596"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__nwhelper__func.html#ga6e1d17b795035ddae44eef8934cd5596">cy_nw_aton_ipv6</a> (const char *char_ptr, <a class="el" href="structcy__nw__ip__address__t.html">cy_nw_ip_address_t</a> *addr)</td></tr>
+<tr class="memdesc:ga6e1d17b795035ddae44eef8934cd5596"><td class="mdescLeft">&#160;</td><td class="mdescRight">GET IPv6 address in decimal notation.  <a href="#ga6e1d17b795035ddae44eef8934cd5596">More...</a><br /></td></tr>
+<tr class="separator:ga6e1d17b795035ddae44eef8934cd5596"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6c674d16fdb3bd66e42907e164f9060b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__nwhelper__func.html#ga6c674d16fdb3bd66e42907e164f9060b">cy_nw_ntoa</a> (<a class="el" href="structcy__nw__ip__address__t.html">cy_nw_ip_address_t</a> *addr, char *ip_str)</td></tr>
+<tr class="memdesc:ga6c674d16fdb3bd66e42907e164f9060b"><td class="mdescLeft">&#160;</td><td class="mdescRight">GET IPv4 address in string format.  <a href="#ga6c674d16fdb3bd66e42907e164f9060b">More...</a><br /></td></tr>
+<tr class="separator:ga6c674d16fdb3bd66e42907e164f9060b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8e1203cce5908ff0dc2fe585097925fc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__nwhelper__func.html#ga8e1203cce5908ff0dc2fe585097925fc">cy_nw_ntoa_ipv6</a> (<a class="el" href="structcy__nw__ip__address__t.html">cy_nw_ip_address_t</a> *addr, char *ip_str)</td></tr>
+<tr class="memdesc:ga8e1203cce5908ff0dc2fe585097925fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">GET IPv6 address in string format.  <a href="#ga8e1203cce5908ff0dc2fe585097925fc">More...</a><br /></td></tr>
+<tr class="separator:ga8e1203cce5908ff0dc2fe585097925fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gad2beee045469986e9af0f3e98cc2593a"></a>
@@ -458,6 +470,160 @@ false : otherwise </dd></dl>
 
 <p>GET time in milliseconds. </p>
 <dl class="section return"><dt>Returns</dt><dd>time in milliseconds </dd></dl>
+
+</div>
+</div>
+<a id="ga4a490647cb8388c5c00eff6e90e31f67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4a490647cb8388c5c00eff6e90e31f67">&#9670;&nbsp;</a></span>cy_nw_aton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cy_nw_aton </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>char_ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcy__nw__ip__address__t.html">cy_nw_ip_address_t</a> *&#160;</td>
+          <td class="paramname"><em>addr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GET IPv4 address in decimal notation. </p>
+<p>NOTE: dotted-decimal notation example (192.168.0.1)</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">char_ptr</td><td>: Pointer to the string containing the IPv4 address in dotted-decimal format. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">addr</td><td>: Pointer to the structure containing IPv4 address in decimal format.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 : success 1 : failed </dd></dl>
+
+</div>
+</div>
+<a id="ga6e1d17b795035ddae44eef8934cd5596"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6e1d17b795035ddae44eef8934cd5596">&#9670;&nbsp;</a></span>cy_nw_aton_ipv6()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cy_nw_aton_ipv6 </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>char_ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcy__nw__ip__address__t.html">cy_nw_ip_address_t</a> *&#160;</td>
+          <td class="paramname"><em>addr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GET IPv6 address in decimal notation. </p>
+<p>NOTE: This API does not support shorthand representation of IPv6 address. Input string should be of the format X:X:X:X:X:X:X:X.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">char_ptr</td><td>: Pointer to the string containing the IPv6 address. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">addr</td><td>: Pointer to the structure containing IPv6 address in decimal format.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 : success 1 : failed </dd></dl>
+
+</div>
+</div>
+<a id="ga6c674d16fdb3bd66e42907e164f9060b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c674d16fdb3bd66e42907e164f9060b">&#9670;&nbsp;</a></span>cy_nw_ntoa()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cy_nw_ntoa </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcy__nw__ip__address__t.html">cy_nw_ip_address_t</a> *&#160;</td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>ip_str</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GET IPv4 address in string format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>: Pointer to IPv4 address structure containing the IPv4 address. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">ip_str</td><td>: Pointer to the string containing IPv4 address in dotted-decimal notation. ip_str must be 16 bytes long. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 : success 1 : failed </dd></dl>
+
+</div>
+</div>
+<a id="ga8e1203cce5908ff0dc2fe585097925fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8e1203cce5908ff0dc2fe585097925fc">&#9670;&nbsp;</a></span>cy_nw_ntoa_ipv6()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cy_nw_ntoa_ipv6 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcy__nw__ip__address__t.html">cy_nw_ip_address_t</a> *&#160;</td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>ip_str</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GET IPv6 address in string format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>: Pointer to IPv6 address structure containing the IPv6 address. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">ip_str</td><td>: Pointer to the string containing IPv6 address. ip_str must 39 bytes long. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 : success 1 : failed </dd></dl>
 
 </div>
 </div>

@@ -44,6 +44,10 @@
 extern "C" {
 #endif
 
+/** \addtogroup string_utils 
+ * The string utilities module is a collection of string conversion helpers to convert between integer and strings.
+ */
+
 /*****************************************************************************/
 /**
  *

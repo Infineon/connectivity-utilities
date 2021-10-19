@@ -58,6 +58,7 @@ extern "C" {
  * The APIs defined in this file should be implemented for other OS/RTOS/Frameworks when it's getting ported on other frameworks.
  *
  */
+
 static struct netif *nw_get_our_netif( WhdSTAInterface *iface )
 {
     char iface_name[4];     /* typically "st0" */
