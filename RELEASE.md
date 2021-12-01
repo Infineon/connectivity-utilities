@@ -5,6 +5,12 @@ Refer to the [README.md](./README.md) for a complete description of the utility 
 
 ## Changelog
 
+### v3.1.0
+* Added support for CYW943907AEVAL1F and CYW954907AEVAL1F kits.
+
+### v3.0.4
+* Added error code module base for Buffer pool library
+
 ### v3.0.3
 * Added additonal enums in JSON structure
 * Introduced module error base for PKCS11 integration

@@ -46,6 +46,7 @@
 #include "NetworkInterface.h"
 #include "WhdSTAInterface.h"
 #include "ip4string.h"
+#include <string.h>
 
 #ifdef __cplusplus
 extern "C" {

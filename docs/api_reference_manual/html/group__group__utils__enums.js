@@ -17,5 +17,6 @@ var group__group__utils__enums =
     [ "CY_RSLT_MODULE_WCM_BASE", "group__group__utils__enums.html#ga835431c873619fde0721f42d3b737967", null ],
     [ "CY_RSLT_MODULE_LWIP_WHD_PORT_BASE", "group__group__utils__enums.html#ga25219a019202ea56e81dec4e00a0abb1", null ],
     [ "CY_RSLT_MODULE_OTA_UPDATE_BASE", "group__group__utils__enums.html#ga0fb96e428627464276d0ffef86672e9f", null ],
-    [ "CY_RSLT_MODULE_HTTP_CLIENT", "group__group__utils__enums.html#gac7425aa86414169a2a83feb791cf999d", null ]
+    [ "CY_RSLT_MODULE_HTTP_CLIENT", "group__group__utils__enums.html#gac7425aa86414169a2a83feb791cf999d", null ],
+    [ "CY_RSLT_MODULE_BUFFER_POOL_BASE", "group__group__utils__enums.html#ga7b742b1e1d2741135f10112304d3ce48", null ]
 ];

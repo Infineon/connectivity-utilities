@@ -112,6 +112,8 @@ extern "C" {
 #define CY_RSLT_MODULE_OTA_UPDATE_BASE                   CY_RSLT_MODULE_MIDDLEWARE_BASE + 13
 /** HTTP Client module base */
 #define CY_RSLT_MODULE_HTTP_CLIENT                       CY_RSLT_MODULE_MIDDLEWARE_BASE + 14
+/** Buffer pool module base */
+#define CY_RSLT_MODULE_BUFFER_POOL_BASE                  CY_RSLT_MODULE_MIDDLEWARE_BASE + 15
 
 /**
  * @}

@@ -43,6 +43,7 @@
 #include "cy_nw_helper.h"
 #include "cyabs_rtos.h"
 #include "iot_wifi_common.h"
+#include <string.h>
 
 #ifdef __cplusplus
 extern "C" {
