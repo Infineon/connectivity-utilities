@@ -5,6 +5,9 @@ Refer to the [README.md](./README.md) for a complete description of the utility 
 
 ## Changelog
 
+### v3.2.1
+* Bug fix in JSON parser module
+
 ### v3.2.0
 * Added support for CY8CEVAL-062S2-MUR-43439M2 kit
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019-2021, Cypress Semiconductor Corporation (an Infineon company) or
+ * Copyright 2019-2022, Cypress Semiconductor Corporation (an Infineon company) or
  * an affiliate of Cypress Semiconductor Corporation.  All rights reserved.
  *
  * This software, including source code, documentation and related
@@ -1065,8 +1065,10 @@ cy_rslt_t cy_JSON_parser( const char* json_input, uint32_t input_length )
 
         number_of_bytes_backed_up = end_of_input - most_recent_object_marker;
 
-        memcpy( packet_backup, most_recent_object_marker, number_of_bytes_backed_up );
-
+        if( most_recent_object_marker != NULL )
+        {
+            memcpy( packet_backup, most_recent_object_marker, number_of_bytes_backed_up );
+        }
 
         incomplete_response = true;
         valid_json_string = CY_RSLT_JSON_GENERIC_ERROR;
