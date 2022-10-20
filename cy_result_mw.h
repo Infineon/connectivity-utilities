@@ -114,6 +114,12 @@ extern "C" {
 #define CY_RSLT_MODULE_HTTP_CLIENT                       CY_RSLT_MODULE_MIDDLEWARE_BASE + 14
 /** Buffer pool module base */
 #define CY_RSLT_MODULE_BUFFER_POOL_BASE                  CY_RSLT_MODULE_MIDDLEWARE_BASE + 15
+/** lwIP network interface integration module base */
+#define CY_RSLT_MODULE_NETWORK_PORT_BASE                 CY_RSLT_MODULE_MIDDLEWARE_BASE + 16
+/** Ethernet Connection Manager (ECM) module base */
+#define CY_RSLT_MODULE_ECM_BASE                          CY_RSLT_MODULE_MIDDLEWARE_BASE + 17
+/** NetXDuo WHD port module base */
+#define CY_RSLT_MODULE_NETXDUO_WHD_PORT_BASE             CY_RSLT_MODULE_MIDDLEWARE_BASE + 18
 
 /**
  * @}

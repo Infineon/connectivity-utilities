@@ -173,8 +173,8 @@ void cy_nw_ip_initialize_status_change_callback(cy_nw_ip_status_change_callback_
  * Retrieves the IPv4 address for an interface (AP or STA) if it
  * exists.
  *
- * @param[in]  iface : Pointer to network interface object
- * @param[out] addr  : Pointer to the IP information sturcture in which the results to be stored
+ * @param[in]  iface         : Pointer to network interface object
+ * @param[out] addr          : Pointer to the IP information sturcture in which the results to be stored
  *
  * @return true  : if IP address is present
  * @return false : otherwise
@@ -212,7 +212,7 @@ void cy_nw_ip_unregister_status_change_callback(cy_nw_ip_interface_t iface, cy_n
 /** Clears the ARP cache for the interface
  * NOTE: in LwIP, we need the netif (NetworkInterface) to do things, we can find using wifi interface.
  *
- * @param[in] iface : Pointer to network interface object
+ * @param[in] iface         : Pointer to network interface object
  *
  *  @return 0 : success
  *          1 : fail
@@ -221,10 +221,10 @@ int cy_nw_host_arp_cache_clear( cy_nw_ip_interface_t iface );
 
 /** Gets the ARP cache list for the interface
  *
- * @param[in]  iface      : Pointer to network interface object
- * @param[in, out] list   : Pointer to @ref cy_nw_arp_cache_entry_t array
- * @param[in]  count      : Number of entries in the array passed in `list`
- * @param[in, out] filled : Pointer to get the number of entries filled in the array pointed by 'list'
+ * @param[in]      iface         : Pointer to network interface object
+ * @param[in, out] list          : Pointer to @ref cy_nw_arp_cache_entry_t array
+ * @param[in]      count         : Number of entries in the array passed in `list`
+ * @param[in, out] filled        : Pointer to get the number of entries filled in the array pointed by 'list'
  *
  * @return  0 : success
  *          1 : fail
@@ -234,8 +234,8 @@ int cy_nw_host_arp_cache_get_list( cy_nw_ip_interface_t iface, cy_nw_arp_cache_e
 /** Send ARP request
  * NOTE: in LwIP, we need the netif (NetworkInterface) to do things, we can find using wifi interface.
  *
- * @param[in]  iface     : Pointer to network interface object
- * @param[in]  ip_string : Pointer to the IPv4 address string (Ex: "192.168.1.1") to which the ARP request to be sent
+ * @param[in]  iface         : Pointer to network interface object
+ * @param[in]  ip_string     : Pointer to the IPv4 address string (Ex: "192.168.1.1") to which the ARP request to be sent
  *
  * @return 0 : success
  *         1 : failed to send ARP request

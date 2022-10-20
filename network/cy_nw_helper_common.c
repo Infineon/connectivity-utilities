@@ -114,7 +114,7 @@ static uint32_t str_to_decimal(char *hex)
     uint32_t decimal = 0, base = 1;
     int i = 0, length = 4;
 
-    for(i = length--; i >= 0; i--)
+    for(i = length-1; i >= 0; i--)
     {
         if(hex[i] >= '0' && hex[i] <= '9')
         {
@@ -204,11 +204,12 @@ bool cy_nw_ntoa (cy_nw_ip_address_t *addr, char *ip_str)
 {
     uint8_t index = 0;
     uint8_t arr[4] = {0};
-    uint32_t ip_addr = addr->ip.v4;
+    uint32_t ip_addr;
     if(ip_str == NULL || addr == NULL)
     {
         return 1;
     }
+    ip_addr = addr->ip.v4;
     while(ip_addr != 0)
     {
         arr[index] = ip_addr & 0xff;

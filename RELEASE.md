@@ -5,8 +5,11 @@ Refer to the [README.md](./README.md) for a complete description of the utility 
 
 ## Changelog
 
-### v3.2.1
-* Bug fix in JSON parser module
+### v4.0.0
+* Updated to use [lwIP network interface integration library](https://Infineon.github.io/lwip-network-interface-integration) APIs.
+* Introduced error code module base for NetXDuo WHD port library
+* Added support for NetXDuo
+* Minor Documentation Updates
 
 ### v3.2.0
 * Added support for CY8CEVAL-062S2-MUR-43439M2 kit
@@ -64,11 +67,11 @@ The current version of the library was validated for compatibility with the foll
 
 | Software and Tools                                        | Version |
 | :---                                                      | :----:  |
-| ModusToolbox&trade; Software Environment                  | 2.4     |
-| - ModusToolbox&trade; Device Configurator                 | 3.10    |
-| - ModusToolbox&trade; CapSense Configurator / Tuner tools | 4.0     |
-| PSoC 6 Peripheral Driver Library (PDL)                    | 2.3.0   |
+| ModusToolbox&trade; Software Environment                  | 3.0     |
+| - ModusToolbox&trade; Device Configurator                 | 4.0     |
+| - ModusToolbox&trade; CapSense Configurator / Tuner tools | 5.0     |
+| PSoC 6 Peripheral Driver Library (PDL)                    | 3.0.0   |
 | GCC Compiler                                              | 10.3.1  |
-| IAR Compiler                                              | 8.32    |
-| Arm Compiler 6                                            | 6.14    |
+| IAR Compiler                                              | 9.30    |
+| Arm Compiler 6                                            | 6.16    |
 | Mbed OS                                                   | 6.2.0   |
