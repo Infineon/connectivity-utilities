@@ -5,6 +5,9 @@ Refer to the [README.md](./README.md) for a complete description of the utility 
 
 ## Changelog
 
+### v4.2.0
+* Added support for KIT_XMC72_EVK_MUR_43439M2 kit
+
 ### v4.1.1
 * Added error code module base for virtual-connectivity-manager library
 
