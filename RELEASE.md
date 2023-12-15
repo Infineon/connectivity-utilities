@@ -5,6 +5,9 @@ Refer to the [README.md](./README.md) for a complete description of the utility 
 
 ## Changelog
 
+### v4.3.0
+* Added support for CY8CEVAL-062S2-CYW43022CUB kit
+
 ### v4.2.0
 * Added support for KIT_XMC72_EVK_MUR_43439M2 kit
 
