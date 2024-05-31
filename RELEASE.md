@@ -5,6 +5,9 @@ Refer to the [README.md](./README.md) for a complete description of the utility 
 
 ## Changelog
 
+### v4.4.0
+* Added support for CYW955913EVK-01 kit
+
 ### v4.3.0
 * Added support for CY8CEVAL-062S2-CYW43022CUB kit
 
