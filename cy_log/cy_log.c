@@ -1,5 +1,5 @@
 /*
- * Copyright 2019-2024, Cypress Semiconductor Corporation (an Infineon company) or
+ * Copyright 2019-2025, Cypress Semiconductor Corporation (an Infineon company) or
  * an affiliate of Cypress Semiconductor Corporation.  All rights reserved.
  *
  * This software, including source code, documentation and related
@@ -39,9 +39,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdarg.h>
+#include <stdbool.h>
 
 #include "cy_result.h"
+#if (defined(CY_RTOS_AWARE) || defined(COMPONENT_RTOS_AWARE))
 #include "cyabs_rtos.h"
+#endif
 #include "cy_log.h"
 
 #ifdef __cplusplus
@@ -75,13 +78,17 @@ extern "C" {
 typedef struct
 {
     bool                init;
+#if (defined(CY_RTOS_AWARE) || defined(COMPONENT_RTOS_AWARE))
     cy_mutex_t          mutex;
-    CY_LOG_LEVEL_T      loglevel[CYLF_MAX];
     cy_time_t           start_time;
+#endif
+    CY_LOG_LEVEL_T      loglevel[CYLF_MAX];
     char                logbuf[CY_LOGBUF_SIZE];
     uint16_t            seq_num;
     log_output          platform_log;
+#if (defined(CY_RTOS_AWARE) || defined(COMPONENT_RTOS_AWARE))
     platform_get_time   platform_time;
+#endif
     void                *worker_thread;
 } cy_log_data_t;
 
@@ -115,11 +122,13 @@ static int cy_log_output(CY_LOG_FACILITY_T facility, CY_LOG_LEVEL_T level, char 
 /*
  * Default implementation to get the time. This function is called, if the user doesn't provide a callback function to get time.
  */
+#if (defined(CY_RTOS_AWARE) || defined(COMPONENT_RTOS_AWARE))
 static cy_rslt_t cy_log_get_time(cy_time_t* time)
 {
     cy_rtos_get_time(time);
     return CY_RSLT_SUCCESS;
 }
+#endif
 
 
 cy_rslt_t cy_log_init(CY_LOG_LEVEL_T level, log_output platform_output, platform_get_time platform_time)
@@ -133,17 +142,18 @@ cy_rslt_t cy_log_init(CY_LOG_LEVEL_T level, log_output platform_output, platform
     }
 
     memset(&cy_log, 0x00, sizeof(cy_log));
+#if (defined(CY_RTOS_AWARE) || defined(COMPONENT_RTOS_AWARE))
     cy_rtos_get_time(&cy_log.start_time);
 
     /*
      * Create our mutex.
      */
-
     result = cy_rtos_init_mutex(&cy_log.mutex);
     if (result != CY_RSLT_SUCCESS)
     {
         return result;
     }
+#endif
 
     /*
      * Set the starting log level.
@@ -174,6 +184,7 @@ cy_rslt_t cy_log_init(CY_LOG_LEVEL_T level, log_output platform_output, platform
         cy_log.platform_log = cy_log_output;
     }
 
+#if (defined(CY_RTOS_AWARE) || defined(COMPONENT_RTOS_AWARE))
     if (platform_time != NULL)
     {
         cy_log.platform_time = platform_time;
@@ -182,6 +193,7 @@ cy_rslt_t cy_log_init(CY_LOG_LEVEL_T level, log_output platform_output, platform
     {
         cy_log.platform_time = cy_log_get_time;
     }
+#endif
     /*
      * All done.
      */
@@ -201,8 +213,9 @@ cy_rslt_t cy_log_shutdown(void)
 
     cy_log.init = false;
 
+#if (defined(CY_RTOS_AWARE) || defined(COMPONENT_RTOS_AWARE))
     cy_rtos_deinit_mutex(&cy_log.mutex);
-
+#endif
     return CY_RSLT_SUCCESS;
 }
 
@@ -225,10 +238,12 @@ cy_rslt_t cy_log_set_platform_time(platform_get_time platform_time)
     {
         return CY_RSLT_TYPE_ERROR;
     }
-
+#if (defined(CY_RTOS_AWARE) || defined(COMPONENT_RTOS_AWARE))
     cy_log.platform_time = platform_time;
-
     return CY_RSLT_SUCCESS;
+#else
+    return CY_RSLT_TYPE_ERROR;
+#endif
 }
 
 cy_rslt_t cy_log_set_facility_level(CY_LOG_FACILITY_T facility, CY_LOG_LEVEL_T level)
@@ -299,9 +314,12 @@ CY_LOG_LEVEL_T cy_log_get_facility_level(CY_LOG_FACILITY_T facility)
 cy_rslt_t cy_log_msg(CY_LOG_FACILITY_T facility, CY_LOG_LEVEL_T level, const char *fmt, ...)
 {
     cy_rslt_t result = CY_RSLT_SUCCESS;
+
+#if (defined(CY_RTOS_AWARE) || defined(COMPONENT_RTOS_AWARE))
     uint32_t time_from_start;
     cy_time_t cur_time;
     int hrs, mins, secs, ms;
+#endif
     va_list args;
     int len;
 
@@ -320,10 +338,10 @@ cy_rslt_t cy_log_msg(CY_LOG_FACILITY_T facility, CY_LOG_LEVEL_T level, const cha
         return CY_RSLT_SUCCESS;
     }
 
+#if (defined(CY_RTOS_AWARE) || defined(COMPONENT_RTOS_AWARE))
     /*
      * Create the time stamp.
      */
-
     if (cy_log.platform_time != NULL)
     {
         result = cy_log.platform_time(&time_from_start);
@@ -346,19 +364,25 @@ cy_rslt_t cy_log_msg(CY_LOG_FACILITY_T facility, CY_LOG_LEVEL_T level, const cha
 
     mins = time_from_start % 60;
     hrs  = (time_from_start / 60) % 24;
+#endif
 
     /*
      * We use a common buffer for composing the log messages so we need to protect against
      * multiple threads calling us simultaneously.
      */
-
+#if (defined(CY_RTOS_AWARE) || defined(COMPONENT_RTOS_AWARE))
     result = cy_rtos_get_mutex(&cy_log.mutex, CY_RTOS_NEVER_TIMEOUT);
     if (result != CY_RSLT_SUCCESS)
     {
         return CY_RSLT_TYPE_ERROR;
     }
+#endif
 
+#if (defined(CY_RTOS_AWARE) || defined(COMPONENT_RTOS_AWARE))
     len = snprintf(cy_log.logbuf, CY_LOGBUF_SIZE, "%04d %02d:%02d:%02d.%03d ", cy_log.seq_num, hrs, mins, secs, ms);
+#else
+    len = snprintf(cy_log.logbuf, CY_LOGBUF_SIZE, "%04d ", cy_log.seq_num);
+#endif
 
     va_start(args, fmt);
     len = vsnprintf(&cy_log.logbuf[len], CY_LOGBUF_SIZE - len, fmt, args);
@@ -374,7 +398,9 @@ cy_rslt_t cy_log_msg(CY_LOG_FACILITY_T facility, CY_LOG_LEVEL_T level, const cha
     /* increment sequence number for next line*/
     cy_log.seq_num++;
 
+#if (defined(CY_RTOS_AWARE) || defined(COMPONENT_RTOS_AWARE))
     cy_rtos_set_mutex(&cy_log.mutex);
+#endif
 
     return result;
 }
@@ -405,12 +431,13 @@ cy_rslt_t cy_log_vprintf(const char *fmt, va_list varg)
      * We use a common buffer for composing the log messages so we need to protect against
      * multiple threads calling us simultaneously.
      */
-
+#if (defined(CY_RTOS_AWARE) || defined(COMPONENT_RTOS_AWARE))
     result = cy_rtos_get_mutex(&cy_log.mutex, CY_RTOS_NEVER_TIMEOUT);
     if (result != CY_RSLT_SUCCESS)
     {
         return CY_RSLT_TYPE_ERROR;
     }
+#endif
 
     len = vsnprintf(cy_log.logbuf, CY_LOGBUF_SIZE, fmt, varg);
     if ((len == -1) || (len >= CY_LOGBUF_SIZE))
@@ -421,10 +448,13 @@ cy_rslt_t cy_log_vprintf(const char *fmt, va_list varg)
 
     cy_log.platform_log(CYLF_DEF, CY_LOG_PRINTF, cy_log.logbuf);
 
+#if (defined(CY_RTOS_AWARE) || defined(COMPONENT_RTOS_AWARE))
     cy_rtos_set_mutex(&cy_log.mutex);
+#endif
 
     return result;
 }
+
 #ifdef __cplusplus
 }
 #endif

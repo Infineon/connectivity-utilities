@@ -5,6 +5,10 @@ Refer to the [README.md](./README.md) for a complete description of the utility 
 
 ## Changelog
 
+### v4.5.1
+* Fixed compilation warning.
+* Minor Documentation updates.
+
 ### v4.5.0
 * Added support for CY8CEVAL-062S2-CYW955513SDM2WLIPA kit
 
@@ -87,11 +91,10 @@ The current version of the library was validated for compatibility with the foll
 
 | Software and Tools                                        | Version |
 | :---                                                      | :----:  |
-| ModusToolbox&trade; Software Environment                  | 3.0     |
-| - ModusToolbox&trade; Device Configurator                 | 4.0     |
-| - ModusToolbox&trade; CapSense Configurator / Tuner tools | 5.0     |
-| PSoC 6 Peripheral Driver Library (PDL)                    | 3.0.0   |
-| GCC Compiler                                              | 10.3.1  |
-| IAR Compiler                                              | 9.30    |
-| Arm Compiler 6                                            | 6.16    |
-| Mbed OS                                                   | 6.2.0   |
+| ModusToolbox&trade; Software Environment                  | 3.4     |
+| - ModusToolbox&trade; Device Configurator                 | 5.20.0  |
+| - ModusToolbox&trade; CapSense Configurator / Tuner tools | 6.40.0  |
+| PSoC 6 Peripheral Driver Library (PDL)                    | 3.16.0  |
+| GCC Compiler                                              | 11.3.1  |
+| IAR Compiler                                              | 9.50.2  |
+| Arm Compiler 6                                            | 6.22    |

@@ -1,5 +1,5 @@
 ## Introduction
-The connectivity utilities library is a collection of general purpose middleware utilities. Several connectivity middleware libraries shall depend on this utilities library. 
+The connectivity utilities library is a collection of general purpose middleware utilities. Several connectivity middleware libraries shall depend on this utilities library.
 Currently, the following utilities are included:
 
 ## Features
@@ -51,11 +51,10 @@ This middleware library and its features are supported on following Infineon pla
 * [PSoC&trade; 62S2 evaluation kit (CY8CEVAL-062S2-CYW955513SDM2WLIPA)]( https://www.infineon.com/cms/en/product/evaluation-boards/cy8ceval-062s2/ )
 
 ## Integration Notes
-* The connectivity utilities library has been designed to work with both the ARM mbed ecosystem and ModusToolbox&trade; environment. 
+* The connectivity utilities library has been designed to work with ModusToolbox&trade; environment.
 * It is adequate to include this library in the desired ecosystem to use these utilities. Depending on the ecosystem, the respective source files will get picked up and linked. This is accomplished using the COMPONENT_ model.
 * In order to ease integration of Wi-Fi connectivity components to code examples, this connectivity utilities library has been bundled into the [Wi-Fi core Freertos lwIP mbedtls library](https://github.com/Infineon/wifi-core-freertos-lwip-mbedtls). Similarly for Ethernet, this connectivity utilities library has been bundled into the [Ethernet core Freertos lwIP mbedtls library](https://github.com/Infineon/ethernet-core-freertos-lwip-mbedtls)
-* For mbed ecosystem, this library has to be included by the respective code examples.
-* NOTE: Refer to the COMPOMENT_ folders for implementation details pertinent to the ecosystem. For instance, certain network helper functions are not implemented on AnyCloud, and are leveraged from Wi-Fi Connection Manager
+* NOTE: Refer to the COMPOMENT_ folders for implementation details pertinent to the ecosystem. For instance, certain network helper functions are leveraged from Wi-Fi Connection Manager
 
 ## Additional Information
 * [Connectivity Utilities RELEASE.md](./RELEASE.md)

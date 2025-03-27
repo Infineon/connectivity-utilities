@@ -1,5 +1,5 @@
 /*
- * Copyright 2024, Cypress Semiconductor Corporation (an Infineon company) or
+ * Copyright 2025, Cypress Semiconductor Corporation (an Infineon company) or
  * an affiliate of Cypress Semiconductor Corporation.  All rights reserved.
  *
  * This software, including source code, documentation and related
@@ -35,14 +35,18 @@
  *
  * Network helper library for FreeRTOS
  */
-
 #include "lwip/dhcp.h"
 #include "lwip/ip4_addr.h"      // NOTE: LwIP specific - ip4_addr
 #include "lwip/netif.h"         // NOTE: LwIP specific - for etharp_cleanup_netif()
 #include "lwip/etharp.h"        // NOTE: LwIP specific - for netif_list for use in etharp_cleanup_netif() call
 #include "cy_nw_helper.h"
+#if !NO_SYS
 #include "cyabs_rtos.h"
+#else
+#include "lwip/sys.h"
+#endif
 #include "cy_network_mw_core.h"
+#include <stdio.h>
 #include <string.h>
 
 #ifdef __cplusplus
@@ -197,9 +201,13 @@ int cy_nw_host_send_arp_request( cy_nw_ip_interface_t ipiface, const char *ip_st
 
 uint32_t cy_nw_get_time (void)
 {
+#if !NO_SYS
     cy_time_t systime;
     cy_rtos_get_time(&systime);
     return systime;
+#else
+    return sys_now();
+#endif
 }
 
 #ifdef __cplusplus
