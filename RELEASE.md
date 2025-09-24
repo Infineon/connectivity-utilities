@@ -5,6 +5,10 @@ Refer to the [README.md](./README.md) for a complete description of the utility 
 
 ## Changelog
 
+### v4.5.2
+* Added support for PSOC&trade; Edge E84 (PSE84) platform.
+* Added error code module base for audio middleware
+
 ### v4.5.1
 * Fixed compilation warning.
 * Minor Documentation updates.
@@ -91,10 +95,9 @@ The current version of the library was validated for compatibility with the foll
 
 | Software and Tools                                        | Version |
 | :---                                                      | :----:  |
-| ModusToolbox&trade; Software Environment                  | 3.4     |
-| - ModusToolbox&trade; Device Configurator                 | 5.20.0  |
-| - ModusToolbox&trade; CapSense Configurator / Tuner tools | 6.40.0  |
-| PSoC 6 Peripheral Driver Library (PDL)                    | 3.16.0  |
-| GCC Compiler                                              | 11.3.1  |
+| ModusToolbox&trade; software environment                  | 3.6     |
+| ModusToolbox&trade; Device Configurator                   | 5.50    |
+| GCC Compiler                                              | 14.2.1  |
 | IAR Compiler                                              | 9.50.2  |
-| Arm Compiler 6                                            | 6.22    |
+| Arm&reg; Compiler 6                                       | 6.22    |
+| LLVM compiler                                             | 19.1.5  |

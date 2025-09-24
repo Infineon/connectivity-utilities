@@ -49,6 +49,7 @@ This middleware library and its features are supported on following Infineon pla
 * [PSoC&trade; 62S2 evaluation kit (CY8CEVAL-062S2-CYW43022CUB)](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ceval-062s2/)
 * [CYW955913EVK-01 Wi-Fi Bluetooth&reg; Prototyping Kit (CYW955913EVK-01)](https://www.infineon.com/CYW955913EVK-01)
 * [PSoC&trade; 62S2 evaluation kit (CY8CEVAL-062S2-CYW955513SDM2WLIPA)]( https://www.infineon.com/cms/en/product/evaluation-boards/cy8ceval-062s2/ )
+* PSOC&trade; Edge E84 Evaluation Kit.
 
 ## Integration Notes
 * The connectivity utilities library has been designed to work with ModusToolbox&trade; environment.

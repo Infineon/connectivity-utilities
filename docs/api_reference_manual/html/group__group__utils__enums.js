@@ -22,5 +22,14 @@ var group__group__utils__enums =
     [ "CY_RSLT_MODULE_NETWORK_PORT_BASE", "group__group__utils__enums.html#ga7e99967f80de6c40e4e79f285b8e3f06", null ],
     [ "CY_RSLT_MODULE_ECM_BASE", "group__group__utils__enums.html#ga9d8b27783084d82f10a8076d35b01333", null ],
     [ "CY_RSLT_MODULE_NETXDUO_WHD_PORT_BASE", "group__group__utils__enums.html#gad53d84be1df4b80105886dab8e4782da", null ],
-    [ "CY_RSLT_MODULE_VCM_BASE", "group__group__utils__enums.html#ga6744b3f6b19ccf9be95421e7a0970bf0", null ]
+    [ "CY_RSLT_MODULE_VCM_BASE", "group__group__utils__enums.html#ga6744b3f6b19ccf9be95421e7a0970bf0", null ],
+    [ "CY_RSLT_MODULE_SYST_COMP_CONTROL_BASE", "group__group__utils__enums.html#ga2d30a2be8e86589d48941d88cfea678d", null ],
+    [ "CY_RSLT_MODULE_STAGED_VOICE_CONTROL_BASE", "group__group__utils__enums.html#gaf70dab2728b3bb06b59a20a0da37ef8b", null ],
+    [ "CY_RSLT_MODULE_AFE_BASE", "group__group__utils__enums.html#gab3b22f7a36b7ab91c64a7c5277aa93a6", null ],
+    [ "CY_RSLT_MODULE_SOD_BASE", "group__group__utils__enums.html#ga125e1a461d26c3aeff8ab6af7cb44357", null ],
+    [ "CY_RSLT_MODULE_LPWWD_BASE", "group__group__utils__enums.html#ga2b9af54b63be6593689c0b50cfbe93f8", null ],
+    [ "CY_RSLT_MODULE_AUD_UTILITY_BASE", "group__group__utils__enums.html#ga4a5b8328a2d1db00a8bee936610c73fd", null ],
+    [ "CY_RSLT_MODULE_ASC_BASE", "group__group__utils__enums.html#ga6ea44ce5299a75a9fea1f2950925bf9b", null ],
+    [ "CY_RSLT_MODULE_AUDIO_STREAMER_BASE", "group__group__utils__enums.html#gaf791a70b98b63a965b75a82e47126bab", null ],
+    [ "CY_RSLT_MODULE_HW_CODEC_BASE", "group__group__utils__enums.html#gac24c6d3b930d947a0f497e33d59e73b8", null ]
 ];

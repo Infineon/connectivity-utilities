@@ -122,6 +122,24 @@ extern "C" {
 #define CY_RSLT_MODULE_NETXDUO_WHD_PORT_BASE             CY_RSLT_MODULE_MIDDLEWARE_BASE + 18
 /** Virtual connectivity Manager module base */
 #define CY_RSLT_MODULE_VCM_BASE                          CY_RSLT_MODULE_MIDDLEWARE_BASE + 19
+/** System component module base */
+#define CY_RSLT_MODULE_SYST_COMP_CONTROL_BASE            CY_RSLT_MODULE_MIDDLEWARE_BASE + 20
+/** Audio middleware staged voice control base */
+#define CY_RSLT_MODULE_STAGED_VOICE_CONTROL_BASE         CY_RSLT_MODULE_MIDDLEWARE_BASE + 21
+/** Audio middleware audio front end base */
+#define CY_RSLT_MODULE_AFE_BASE                          CY_RSLT_MODULE_MIDDLEWARE_BASE + 22
+/** Audio middleware speech-onset-detection base */
+#define CY_RSLT_MODULE_SOD_BASE                          CY_RSLT_MODULE_MIDDLEWARE_BASE + 23
+/** Low power wake word module error base which is internal to staged voice control middleware */
+#define CY_RSLT_MODULE_LPWWD_BASE                        CY_RSLT_MODULE_MIDDLEWARE_BASE + 24
+/** Audio middleware utilities base */
+#define CY_RSLT_MODULE_AUD_UTILITY_BASE                  CY_RSLT_MODULE_MIDDLEWARE_BASE + 25
+/** Audio software codec middleware base */
+#define CY_RSLT_MODULE_ASC_BASE                          CY_RSLT_MODULE_MIDDLEWARE_BASE + 26
+/** Audio streamer middleware base */
+#define CY_RSLT_MODULE_AUDIO_STREAMER_BASE               CY_RSLT_MODULE_MIDDLEWARE_BASE + 27
+/** Audio hardware codec middleware base */
+#define CY_RSLT_MODULE_HW_CODEC_BASE                     CY_RSLT_MODULE_MIDDLEWARE_BASE + 28
 
 /**
  * @}
